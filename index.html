@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITCoP | Internet Transparency Code of Practice</title>
+    <meta name="description" content="The Internet Transparency Code of Practice: a call for a digital forest charter. Sign the petition and get the first 0PN Badge." />
+    <meta property="og:title" content="ITCoP | Internet Transparency Code of Practice" />
+    <meta property="og:description" content="A call for a digital forest charter. Sign the ITCoP petition and get the first 0PN Badge." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="#top" data-i18n-aria-label="brand.homeLabel">
+          <img
+            src="assets/lockup-A-charteroak.svg"
+            data-i18n-alt="brand.lockupAlt"
+            alt=""
+            width="360"
+            height="120"
+          />
+        </a>
+        <nav class="language-nav" data-i18n-aria-label="nav.language">
+          <div class="language-toggle" data-toggle-group="header">
+            <button type="button" class="lang-button" data-lang-switch="en">
+              <span data-i18n="lang.english"></span>
+            </button>
+            <button type="button" class="lang-button" data-lang-switch="fr">
+              <span data-i18n="lang.french"></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+            <h1 data-i18n="hero.headline"></h1>
+            <p class="hero-subhead" data-i18n="hero.subhead"></p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#petition" data-i18n="hero.ctaPetition"></a>
+              <a class="button button-secondary" href="#badge" data-i18n="hero.ctaBadge"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section">
+        <div class="shell section-grid">
+          <div class="section-heading">
+            <p class="section-label" data-i18n="story.label"></p>
+            <h2 data-i18n="story.heading"></h2>
+          </div>
+          <div class="section-copy">
+            <p data-i18n="story.bodyOne"></p>
+            <p data-i18n="story.bodyTwo"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="petition-section" id="petition">
+        <div class="shell section-grid form-grid">
+          <div class="section-heading">
+            <p class="section-label" data-i18n="petition.label"></p>
+            <h2 data-i18n="petition.heading"></h2>
+            <p data-i18n="petition.intro"></p>
+          </div>
+          <div class="form-stack">
+            <form class="support-form" id="petition-form" novalidate>
+              <div class="field">
+                <label for="petition-name" data-i18n="petition.form.nameLabel"></label>
+                <input type="text" id="petition-name" name="name" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="petition-email" data-i18n="petition.form.emailLabel"></label>
+                <input type="email" id="petition-email" name="email" autocomplete="email" />
+              </div>
+              <div class="button-row">
+                <button type="submit" class="button button-primary" data-i18n="petition.form.submit"></button>
+                <button
+                  type="button"
+                  class="button button-secondary"
+                  id="inclusive-support-button"
+                  data-i18n="petition.form.supportWithoutIdentifying"
+                ></button>
+              </div>
+              <p class="form-status" id="petition-status" hidden aria-live="polite"></p>
+            </form>
+
+            <aside class="notice-card" aria-labelledby="notice-title">
+              <h3 id="notice-title" data-i18n="petition.notice.title"></h3>
+              <ul class="notice-list">
+                <li data-i18n="petition.notice.collected"></li>
+                <li data-i18n="petition.notice.purpose"></li>
+                <li data-i18n="petition.notice.storage"></li>
+                <li data-i18n="petition.notice.receipt"></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="badge-section" id="badge">
+        <div class="shell badge-layout">
+          <div class="badge-copy">
+            <p class="section-label" data-i18n="badge.label"></p>
+            <h2 data-i18n="badge.heading"></h2>
+            <p data-i18n="badge.bodyOne"></p>
+            <p data-i18n="badge.bodyTwo"></p>
+          </div>
+          <div class="badge-panel">
+            <img
+              src="assets/badge-aperture.svg"
+              data-i18n-alt="badge.imageAlt"
+              alt=""
+              width="180"
+              height="180"
+            />
+            <form class="support-form badge-form" id="badge-form" novalidate>
+              <div class="field">
+                <label for="badge-email" data-i18n="badge.form.emailLabel"></label>
+                <input type="email" id="badge-email" name="email" autocomplete="email" />
+              </div>
+              <button type="submit" class="button button-light" data-i18n="badge.form.submit"></button>
+              <p class="form-status form-status-light" id="badge-status" hidden aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-row">
+        <div class="footer-copy">
+          <p data-i18n="footer.accountability"></p>
+          <p>
+            <span data-i18n="footer.contactLabel"></span>
+            <!--email_off--><a href="mailto:info@itcop.org" data-i18n="footer.email">info@itcop.org</a><!--/email_off-->
+          </p>
+        </div>
+        <nav class="language-nav" data-i18n-aria-label="nav.language">
+          <div class="language-toggle" data-toggle-group="footer">
+            <button type="button" class="lang-button" data-lang-switch="en">
+              <span data-i18n="lang.english"></span>
+            </button>
+            <button type="button" class="lang-button" data-lang-switch="fr">
+              <span data-i18n="lang.french"></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

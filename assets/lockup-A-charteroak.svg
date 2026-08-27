@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="ITCoP — Internet Transparency Code of Practice">
+  <title>ITCoP — Internet Transparency Code of Practice (Charter Oak lockup)</title>
+  <defs>
+    <clipPath id="sealClipLA"><circle cx="120" cy="120" r="96"/></clipPath>
+  </defs>
+
+  <!-- SYMBOL: Charter Oak Seal -->
+  <g>
+    <circle cx="120" cy="120" r="108" fill="none" stroke="#14352A" stroke-width="3"/>
+    <circle cx="120" cy="120" r="96"  fill="none" stroke="#14352A" stroke-width="7"/>
+    <g clip-path="url(#sealClipLA)">
+      <path d="M111 118 L111 172 Q111 176 108 178 L132 178 Q129 176 129 172 L129 118 Z" fill="#14352A"/>
+      <g fill="#2E7D5B">
+        <path d="M120 52 Q141 66 138 92 Q120 84 102 92 Q99 66 120 52 Z"/>
+        <path d="M176 84 Q176 112 150 118 Q152 100 141 90 Q160 74 176 84 Z"/>
+        <path d="M64 84 Q80 74 99 90 Q88 100 90 118 Q64 112 64 84 Z"/>
+        <path d="M170 140 Q156 160 132 150 Q142 140 141 126 Q160 124 170 140 Z"/>
+        <path d="M70 140 Q80 124 99 126 Q98 140 108 150 Q84 160 70 140 Z"/>
+      </g>
+      <circle cx="120" cy="112" r="24" fill="#2E7D5B"/>
+      <circle cx="120" cy="112" r="19" fill="#F4EFE3"/>
+      <circle cx="120" cy="112" r="19" fill="none" stroke="#14352A" stroke-width="3"/>
+      <circle cx="120" cy="112" r="7.5" fill="#14352A"/>
+      <g fill="none" stroke="#14352A" stroke-width="5.5" stroke-linecap="round">
+        <path d="M120 178 Q98 186 84 200"/>
+        <path d="M120 178 Q142 186 156 200"/>
+        <path d="M120 178 L120 204"/>
+        <path d="M120 178 Q108 190 100 200"/>
+        <path d="M120 178 Q132 190 140 200"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- WORDMARK -->
+  <g fill="#14352A" font-family="Spectral, 'Source Serif 4', Georgia, 'Times New Roman', serif">
+    <text x="262" y="122" font-size="86" font-weight="600" letter-spacing="1">ITCoP</text>
+    <text x="264" y="157" font-size="19.5" font-weight="400" letter-spacing="1.9">Internet Transparency Code of Practice</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="ITCoP Charter Oak Seal">
+  <title>ITCoP — Charter Oak Seal</title>
+  <!-- Concept A: Charter Oak Seal. A tree seated inside a charter seal; the canopy holds an open aperture/eye (transparency = seeing through); the roots read as a signature flourish. -->
+  <defs>
+    <clipPath id="sealClipA"><circle cx="120" cy="120" r="96"/></clipPath>
+  </defs>
+
+  <!-- Charter seal: two concentric rings -->
+  <circle cx="120" cy="120" r="108" fill="none" stroke="#14352A" stroke-width="3"/>
+  <circle cx="120" cy="120" r="96"  fill="none" stroke="#14352A" stroke-width="7"/>
+
+  <g clip-path="url(#sealClipA)">
+    <!-- Trunk: seated under the canopy, widening into a root base -->
+    <path d="M111 118 L111 172 Q111 176 108 178 L108 178 L132 178 Q129 176 129 172 L129 118 Z" fill="#14352A"/>
+
+    <!-- Canopy: a rounded crown of leaf-lobes wrapping the central eye -->
+    <g fill="#2E7D5B">
+      <!-- top crown lobe -->
+      <path d="M120 52 Q141 66 138 92 Q120 84 102 92 Q99 66 120 52 Z"/>
+      <!-- upper-right lobe -->
+      <path d="M176 84 Q176 112 150 118 Q152 100 141 90 Q160 74 176 84 Z"/>
+      <!-- upper-left lobe -->
+      <path d="M64 84 Q80 74 99 90 Q88 100 90 118 Q64 112 64 84 Z"/>
+      <!-- lower-right lobe (fills under the eye toward trunk) -->
+      <path d="M170 140 Q156 160 132 150 Q142 140 141 126 Q160 124 170 140 Z"/>
+      <!-- lower-left lobe -->
+      <path d="M70 140 Q80 124 99 126 Q98 140 108 150 Q84 160 70 140 Z"/>
+    </g>
+
+    <!-- Central aperture / eye seated in the canopy -->
+    <circle cx="120" cy="112" r="24" fill="#2E7D5B"/>
+    <circle cx="120" cy="112" r="19" fill="#F4EFE3"/>
+    <circle cx="120" cy="112" r="19" fill="none" stroke="#14352A" stroke-width="3"/>
+    <circle cx="120" cy="112" r="7.5" fill="#14352A"/>
+
+    <!-- Roots as a charter signature flourish -->
+    <g fill="none" stroke="#14352A" stroke-width="5.5" stroke-linecap="round">
+      <path d="M120 178 Q98 186 84 200"/>
+      <path d="M120 178 Q142 186 156 200"/>
+      <path d="M120 178 L120 204"/>
+      <path d="M120 178 Q108 190 100 200"/>
+      <path d="M120 178 Q132 190 140 200"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ITCoP">
+  <title>ITCoP favicon</title>
+  <!-- Favicon cut of Concept A: single bold seal ring, simplified 5-lobe canopy, bold eye, roots dropped for legibility at 16px. -->
+  <rect width="64" height="64" rx="12" fill="#14352A"/>
+  <g clip-path="url(#fc)">
+    <clipPath id="fc"><rect x="6" y="6" width="52" height="52" rx="8"/></clipPath>
+    <!-- parchment field so the eye reads -->
+    <rect x="6" y="6" width="52" height="52" fill="#F4EFE3"/>
+    <!-- trunk -->
+    <rect x="29.5" y="34" width="5" height="18" fill="#14352A"/>
+    <!-- canopy lobes -->
+    <g fill="#2E7D5B">
+      <path d="M32 12 Q40 18 38 27 Q32 24 26 27 Q24 18 32 12 Z"/>
+      <path d="M50 24 Q50 34 40 36 Q42 30 38 26 Q46 21 50 24 Z"/>
+      <path d="M14 24 Q18 21 26 26 Q22 30 24 36 Q14 34 14 24 Z"/>
+      <path d="M47 40 Q42 48 34 44 Q38 40 38 35 Q44 34 47 40 Z"/>
+      <path d="M17 40 Q20 34 26 35 Q26 40 30 44 Q22 48 17 40 Z"/>
+    </g>
+    <!-- eye -->
+    <circle cx="32" cy="31" r="9.5" fill="#2E7D5B"/>
+    <circle cx="32" cy="31" r="7" fill="#F4EFE3"/>
+    <circle cx="32" cy="31" r="3.2" fill="#14352A"/>
+  </g>
+</svg>
