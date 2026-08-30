@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ITCoP | Internet Transparency Code of Practice</title>
-    <meta name="description" content="The Internet Transparency Code of Practice: a call for a digital forest charter. Sign the petition and get the first 0PN Badge." />
-    <meta property="og:title" content="ITCoP | Internet Transparency Code of Practice" />
-    <meta property="og:description" content="A call for a digital forest charter. Sign the ITCoP petition and get the first 0PN Badge." />
+    <title>ITCOP | Internet Transparency Code of Practice</title>
+    <meta name="description" content="The ITCoP 2028 campaign: a call for a Digital Transparency Charter. Get the ITCoP Transparency Signal Badge and join the 0PN Directory." />
+    <meta property="og:title" content="ITCoP 2028 | Campaign for a Digital Transparency Charter" />
+    <meta property="og:description" content="The ITCoP 2028 campaign for a Digital Transparency Charter. Get the ITCoP Transparency Signal Badge and broadcast digital transparency." />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="assets/itcop-favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
@@ -18,11 +18,11 @@
       <div class="shell header-row">
         <a class="brand" href="#top" data-i18n-aria-label="brand.homeLabel">
           <img
-            src="assets/lockup-A-charteroak.svg"
+            src="assets/lockup-itcop.svg"
             data-i18n-alt="brand.lockupAlt"
             alt=""
-            width="360"
-            height="120"
+            width="384"
+            height="112"
           />
         </a>
         <nav class="language-nav" data-i18n-aria-label="nav.language">
@@ -46,9 +46,22 @@
             <h1 data-i18n="hero.headline"></h1>
             <p class="hero-subhead" data-i18n="hero.subhead"></p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#petition" data-i18n="hero.ctaPetition"></a>
-              <a class="button button-secondary" href="#badge" data-i18n="hero.ctaBadge"></a>
+              <a class="button button-primary" href="#badge" data-i18n="hero.ctaPetition"></a>
+              <a class="button button-secondary" href="#directory" data-i18n="hero.ctaBadge"></a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gateway-section story-section">
+        <div class="shell section-grid">
+          <div class="section-heading">
+            <p class="section-label" data-i18n="gateway.label"></p>
+            <h2 data-i18n="gateway.heading"></h2>
+          </div>
+          <div class="section-copy">
+            <p data-i18n="gateway.bodyOne"></p>
+            <p data-i18n="gateway.bodyTwo"></p>
           </div>
         </div>
       </section>
@@ -66,72 +79,139 @@
         </div>
       </section>
 
-      <section class="petition-section" id="petition">
-        <div class="shell section-grid form-grid">
-          <div class="section-heading">
-            <p class="section-label" data-i18n="petition.label"></p>
-            <h2 data-i18n="petition.heading"></h2>
-            <p data-i18n="petition.intro"></p>
-          </div>
-          <div class="form-stack">
-            <form class="support-form" id="petition-form" novalidate>
-              <div class="field">
-                <label for="petition-name" data-i18n="petition.form.nameLabel"></label>
-                <input type="text" id="petition-name" name="name" autocomplete="name" />
-              </div>
-              <div class="field">
-                <label for="petition-email" data-i18n="petition.form.emailLabel"></label>
-                <input type="email" id="petition-email" name="email" autocomplete="email" />
-              </div>
-              <div class="button-row">
-                <button type="submit" class="button button-primary" data-i18n="petition.form.submit"></button>
-                <button
-                  type="button"
-                  class="button button-secondary"
-                  id="inclusive-support-button"
-                  data-i18n="petition.form.supportWithoutIdentifying"
-                ></button>
-              </div>
-              <p class="form-status" id="petition-status" hidden aria-live="polite"></p>
-            </form>
-
-            <aside class="notice-card" aria-labelledby="notice-title">
-              <h3 id="notice-title" data-i18n="petition.notice.title"></h3>
-              <ul class="notice-list">
-                <li data-i18n="petition.notice.collected"></li>
-                <li data-i18n="petition.notice.purpose"></li>
-                <li data-i18n="petition.notice.storage"></li>
-                <li data-i18n="petition.notice.receipt"></li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-      </section>
-
       <section class="badge-section" id="badge">
         <div class="shell badge-layout">
           <div class="badge-copy">
             <p class="section-label" data-i18n="badge.label"></p>
             <h2 data-i18n="badge.heading"></h2>
+            <p class="badge-provenance" data-i18n="badge.provenance"></p>
             <p data-i18n="badge.bodyOne"></p>
             <p data-i18n="badge.bodyTwo"></p>
           </div>
           <div class="badge-panel">
             <img
-              src="assets/badge-aperture.svg"
-              data-i18n-alt="badge.imageAlt"
+              src="assets/step-empty.svg"
+              id="badge-hero-icon"
+              class="badge-step-icon badge-hero-icon"
               alt=""
-              width="180"
-              height="180"
+              width="72"
+              height="72"
             />
-            <form class="support-form badge-form" id="badge-form" novalidate>
+            <p class="badge-gateway-title" data-i18n="badge.gateway.title"></p>
+            <div class="badge-notice" id="badge-notice" role="note">
+              <p class="badge-notice-title" data-i18n="badge.notice.title"></p>
+              <p class="badge-notice-intro" data-i18n="badge.notice.intro"></p>
+              <ul class="badge-notice-list">
+                <li data-i18n="badge.notice.controller"></li>
+                <li data-i18n="badge.notice.collected"></li>
+                <li data-i18n="badge.notice.purpose"></li>
+                <li data-i18n="badge.notice.newsletter"></li>
+                <li data-i18n="badge.notice.basis"></li>
+                <li data-i18n="badge.notice.storage"></li>
+                <li data-i18n="badge.notice.rights"></li>
+                <li data-i18n="badge.notice.receipt"></li>
+              </ul>
+            </div>
+            <button type="button" class="button button-light" id="badge-continue" data-i18n="badge.gateway.continue"></button>
+            <form class="support-form badge-form" id="badge-form" novalidate hidden>
+              <div class="field">
+                <label for="badge-first-name" data-i18n="badge.form.firstNameLabel"></label>
+                <input type="text" id="badge-first-name" name="firstName" autocomplete="given-name" />
+              </div>
               <div class="field">
                 <label for="badge-email" data-i18n="badge.form.emailLabel"></label>
                 <input type="email" id="badge-email" name="email" autocomplete="email" />
               </div>
+              <label class="badge-toggle" for="badge-newsletter">
+                <input type="checkbox" id="badge-newsletter" name="newsletter" class="badge-toggle-input" />
+                <span class="badge-toggle-track" aria-hidden="true"><span class="badge-toggle-thumb"></span></span>
+                <span class="badge-toggle-label" data-i18n="badge.form.newsletterLabel"></span>
+              </label>
+              <label class="badge-toggle" for="badge-register-toggle">
+                <input type="checkbox" id="badge-register-toggle" name="register" class="badge-toggle-input" aria-controls="badge-org-fields" aria-expanded="false" />
+                <span class="badge-toggle-track" aria-hidden="true"><span class="badge-toggle-thumb"></span></span>
+                <span class="badge-toggle-label" data-i18n="badge.form.registerLabel"></span>
+              </label>
+              <p class="badge-register-inline-note" data-i18n="badge.form.registerNote"></p>
+              <div class="badge-org-fields" id="badge-org-fields" hidden>
+                <p class="badge-org-level" data-i18n="badge.org.levelTag"></p>
+                <p class="badge-org-fields-intro" data-i18n="badge.org.notice.intro"></p>
+                <div class="badge-notice badge-org-notice" role="note">
+                  <p class="badge-notice-title" data-i18n="badge.org.notice.title"></p>
+                  <ul class="badge-notice-list">
+                    <li data-i18n="badge.org.notice.controller"></li>
+                    <li data-i18n="badge.org.notice.collected"></li>
+                    <li data-i18n="badge.org.notice.purpose"></li>
+                    <li data-i18n="badge.org.notice.validation"></li>
+                    <li data-i18n="badge.org.notice.storage"></li>
+                    <li data-i18n="badge.org.notice.rights"></li>
+                  </ul>
+                </div>
+                <div class="field">
+                  <label for="org-last-name" data-i18n="badge.org.form.lastNameLabel"></label>
+                  <input type="text" id="org-last-name" name="lastName" autocomplete="family-name" />
+                </div>
+                <div class="field">
+                  <label for="org-country" data-i18n="badge.org.form.countryLabel"></label>
+                  <input type="text" id="org-country" name="country" autocomplete="country-name" />
+                </div>
+                <div class="field">
+                  <label for="org-website" data-i18n="badge.org.form.websiteLabel"></label>
+                  <input type="url" id="org-website" name="website" inputmode="url" placeholder="https://" />
+                </div>
+                <div class="field">
+                  <label for="org-privacy-contact" data-i18n="badge.org.form.privacyContactLabel"></label>
+                  <input type="text" id="org-privacy-contact" name="privacyContact" autocomplete="email" placeholder="privacy@example.org" />
+                </div>
+                <div class="field">
+                  <label for="org-access-point" data-i18n="badge.org.form.accessPointLabel"></label>
+                  <input type="url" id="org-access-point" name="accessPoint" inputmode="url" placeholder="https://" />
+                </div>
+                <p class="badge-register-inline-note" data-i18n="badge.org.pending.note"></p>
+              </div>
               <button type="submit" class="button button-light" data-i18n="badge.form.submit"></button>
               <p class="form-status form-status-light" id="badge-status" hidden aria-live="polite"></p>
             </form>
+            <div class="badge-receipt" id="badge-receipt" hidden aria-live="polite">
+              <h3 class="badge-receipt-heading" data-i18n="badge.receipt.heading"></h3>
+              <dl class="badge-receipt-fields">
+                <div class="badge-receipt-row">
+                  <dt data-i18n="badge.receipt.idLabel"></dt>
+                  <dd id="receipt-id-value"></dd>
+                </div>
+                <div class="badge-receipt-row">
+                  <dt data-i18n="badge.receipt.noticeLabel"></dt>
+                  <dd id="receipt-notice-value"></dd>
+                </div>
+                <div class="badge-receipt-row">
+                  <dt data-i18n="badge.receipt.issuedLabel"></dt>
+                  <dd id="receipt-issued-value"></dd>
+                </div>
+              </dl>
+              <div class="badge-receipt-actions">
+                <button type="button" class="button button-light" id="receipt-download" data-i18n="badge.receipt.download"></button>
+                <button type="button" class="badge-embed-button" id="receipt-copy-embed" data-i18n="badge.receipt.copyEmbed"></button>
+              </div>
+              <p class="badge-embed-status" id="badge-embed-status" hidden aria-live="polite"></p>
+              <p class="badge-receipt-disclaimer" data-i18n="badge.receipt.disclaimer"></p>
+              <div class="badge-register-confirm" id="receipt-register-confirm" hidden>
+                <p class="badge-register-pending" data-i18n="badge.register.pending"></p>
+                <p class="badge-register-note" data-i18n="badge.register.note"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="directory-section story-section" id="directory">
+        <div class="shell section-grid">
+          <div class="section-heading">
+            <p class="section-label" data-i18n="directory.label"></p>
+            <h2 data-i18n="directory.heading"></h2>
+          </div>
+          <div class="section-copy">
+            <p data-i18n="directory.intro"></p>
+            <div class="directory-list" id="directory-list" aria-live="polite"></div>
           </div>
         </div>
       </section>

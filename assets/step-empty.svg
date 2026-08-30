@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="">
+  <!-- 0PN aperture disc, empty: the sign is posted, nothing acknowledged yet. -->
+  <circle cx="50" cy="50" r="46" fill="#111315" />
+  <!-- aperture notch bitten from the top-left rim -->
+  <circle cx="22" cy="24" r="11" fill="#ffffff" />
+</svg>
