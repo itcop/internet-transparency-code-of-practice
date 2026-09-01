@@ -1,0 +1,9 @@
+/*
+  tdm-reservation: 1
+  tdm-policy: https://itcop.org/licence/0pn-mrt-1.0.json
+
+/licence/0pn-mrt-1.0.json
+  Content-Type: application/ld+json
+
+/licence/0pn-mrt-1.0.txt
+  Content-Type: text/plain; charset=utf-8

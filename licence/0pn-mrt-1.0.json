@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    {
+      "tdm": "http://www.w3.org/ns/tdmrep/",
+      "mrt": "https://itcop.org/ns/0pn-mrt#"
+    }
+  ],
+  "@type": "Policy",
+  "uid": "https://itcop.org/licence/0pn-mrt-1.0.json",
+  "profile": "http://www.w3.org/ns/tdmrep/",
+
+  "mrt:terms_id": "0pn-mrt-1.0",
+  "mrt:terms_version_reference": "0pn-mrt-1.0-2026-08-31",
+  "mrt:terms_name": "0PN Machine Reuse Terms 1.0",
+  "mrt:terms_text_html": "https://itcop.org/licence/0pn-mrt-1.0",
+  "mrt:terms_text_plain": "https://itcop.org/licence/0pn-mrt-1.0.txt",
+  "mrt:issued": "2026-08-31",
+  "mrt:publisher": "Transparency and Consent Interoperability Expert Group",
+
+  "mrt:base_licence": "https://creativecommons.org/licenses/by/4.0/",
+  "mrt:base_licence_modified": false,
+  "mrt:base_licence_statement": "These terms do not modify, replace or restrict the CC BY 4.0 grant. Where they appear to conflict as to the rights granted under copyright, CC BY 4.0 governs. These terms are not a Creative Commons licence and carry no Creative Commons endorsement.",
+
+  "mrt:conditions": {
+    "MRT-1": {
+      "label": "Attribution survives ingestion",
+      "requirement": "Creator, title, version and source URL are retained as structured metadata in the dataset record, not only in the body of the source file.",
+      "register": "copyright_licence"
+    },
+    "MRT-2": {
+      "label": "Provenance is recorded",
+      "requirement": "The record identifies where the work was obtained, when it was obtained, and the licence and terms in force at the time of collection, referenced by version.",
+      "register": "preference_signal_or_contract"
+    },
+    "MRT-3": {
+      "label": "The record is producible",
+      "requirement": "The MRT-2 record can be produced on request to the publisher or a supervisory authority without requiring the requester to identify themselves.",
+      "register": "preference_signal_or_contract"
+    },
+    "MRT-4": {
+      "label": "Attribution appears at output",
+      "requirement": "Where the work is quoted or closely paraphrased in a generated output, it is attributed.",
+      "register": "copyright_licence"
+    }
+  },
+
+  "mrt:evidence_request_endpoint": "https://itcop.org/reuse/evidence",
+  "mrt:evidence_endpoint_descriptor": "https://itcop.org/reuse/evidence/index.json",
+  "mrt:anonymous_request_permitted": true,
+
+  "mrt:reservation_basis": "Article 4(3), Directive (EU) 2019/790",
+  "mrt:reservation_scope": "Text and data mining carried out for the development or training of AI systems, where the conditions above are not met.",
+
+  "permission": [
+    {
+      "target": "https://itcop.org/",
+      "action": "tdm:mine",
+      "assigner": "https://itcop.org/",
+      "duty": [
+        {
+          "action": "attribute",
+          "mrt:condition": ["MRT-1", "MRT-4"]
+        },
+        {
+          "action": "inform",
+          "mrt:condition": ["MRT-2", "MRT-3"]
+        }
+      ]
+    }
+  ],
+
+  "mrt:contact": "info@tcieg.org"
+}

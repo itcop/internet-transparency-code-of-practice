@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reuse evidence request &middot; 0PN Machine Reuse Terms 1.0</title>
+  <meta name="tdm-reservation" content="1">
+  <meta name="tdm-policy" content="https://itcop.org/licence/0pn-mrt-1.0.json">
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+  <link rel="terms-of-machine-reuse" href="https://itcop.org/licence/0pn-mrt-1.0.json">
+  <style>
+    :root { color-scheme: light; }
+    body { max-width: 46rem; margin: 3rem auto; padding: 0 1.25rem;
+      font: 16px/1.6 -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #14213d; background: #fbfaf7; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.05rem; margin-top: 2rem; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    pre { background: #f0eee8; padding: 1rem; overflow-x: auto; border-radius: 6px; }
+    .note { background: #fff4e0; border-left: 3px solid #d9a441; padding: 0.75rem 1rem; border-radius: 4px; }
+    a { color: #1b5e8c; }
+    dt { font-weight: 600; margin-top: 0.5rem; }
+    footer { margin-top: 3rem; font-size: 0.85rem; color: #55607a; }
+  </style>
+</head>
+<body>
+  <h1>Reuse evidence request</h1>
+  <p>This is the MRT-3 request point for works published under the
+    <a href="/licence/0pn-mrt-1.0.json">0PN Machine Reuse Terms 1.0</a>
+    (version reference <code>0pn-mrt-1.0-2026-08-31</code>). The machine-readable
+    descriptor for this point is at
+    <a href="/reuse/evidence/index.json">/reuse/evidence/index.json</a>.</p>
+
+  <p class="note">The automated request endpoint is not yet live. Until it is,
+    send your request by email to
+    <a href="mailto:info@tcieg.org">info@tcieg.org</a>. You are not required to
+    identify yourself to receive the provenance record. No account, email
+    verification, or identification is a condition of a response.</p>
+
+  <h2>What you can ask for</h2>
+  <p>Under MRT-3, the party that ingested a work must be able to produce, on
+    request, the provenance record MRT-2 requires: where the work was obtained,
+    when it was obtained, and the licence and terms in force at the time of
+    collection, referenced by version.</p>
+
+  <h2>Request format</h2>
+  <p>Include these fields:</p>
+  <dl>
+    <dt>work (required)</dt>
+    <dd>The URL of the work, its <code>terms_version_reference</code>, or a
+      content hash.</dd>
+    <dt>dataset_id (optional)</dt>
+    <dd>Where you already know which corpus is in question.</dd>
+    <dt>reply_token (required for the automated endpoint)</dt>
+    <dd>An opaque token you generate, at least 128 bits of entropy. The response
+      is retrieved by presenting this token, so no return address is collected.
+      For the interim email route, a reply address is only what you choose to
+      share.</dd>
+  </dl>
+
+  <h2>Response</h2>
+  <p>The response states whether the work was ingested, the source URL, the date
+    obtained, the licence and terms version at collection, the corpus
+    identifier, whether attribution metadata was retained, the accountable
+    responder, and the response date. A refusal, with a reason, is a valid and
+    attributable response. The target response time is 30 days.</p>
+
+  <footer>
+    <p>0PN Machine Reuse Terms 1.0 sit on top of
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and do
+      not modify, replace, or restrict that grant. Published by the Transparency
+      and Consent Interoperability Expert Group. No tracking is set on this page.</p>
+  </footer>
+</body>
+</html>

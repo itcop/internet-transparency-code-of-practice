@@ -708,3 +708,12 @@ h3 {
     padding: 1.6rem;
   }
 }
+
+/* white paper section notice */
+.whitepaper-notice {
+  font-size: 0.85rem;
+  opacity: 0.72;
+  border-left: 2px solid currentColor;
+  padding-left: 0.75rem;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,98 @@
+0PN MACHINE REUSE TERMS 1.0 (0PN-MRT 1.0)
+A reciprocity layer for CC BY 4.0 works
+
+terms_id:                  0pn-mrt-1.0
+terms_version_reference:   0pn-mrt-1.0-2026-08-31
+issued:                    2026-08-31
+publisher:                 Transparency and Consent Interoperability Expert Group
+base_licence:              https://creativecommons.org/licenses/by/4.0/
+base_licence_modified:     false
+contact:                   info@tcieg.org
+
+
+1. STATUS
+
+This is not a Creative Commons licence. It does not modify, replace or
+restrict the CC BY 4.0 grant, and it carries no Creative Commons endorsement.
+Where these terms and CC BY 4.0 appear to conflict as to the rights granted
+under copyright, CC BY 4.0 governs.
+
+Creative Commons trademark policy does not permit a modified licence to carry
+the CC name or branding, and CC BY 4.0 section 2(a)(5)(B) does not permit
+additional terms that restrict the exercise of the licensed rights. These
+terms are therefore published as a separate, separately named instrument
+alongside an unmodified CC BY 4.0 licence.
+
+
+2. WHAT THIS INSTRUMENT IS
+
+A named, versioned, machine readable statement of the conditions under which
+the publisher asks that its works be used as AI training material, together
+with the legal reservation that applies where those conditions are not met.
+
+
+3. THE CONDITIONS
+
+MRT-1  ATTRIBUTION SURVIVES INGESTION
+       Creator, title, version and source URL are retained as structured
+       metadata in the dataset record, not only in the body of the source
+       file, so that attribution remains available after the text has been
+       segmented and normalised.
+
+MRT-2  PROVENANCE IS RECORDED
+       The record identifies where the work was obtained, when it was
+       obtained, and the licence and terms in force at the time of
+       collection, referenced by version.
+
+MRT-3  THE RECORD IS PRODUCIBLE
+       The party can produce the MRT-2 record on request, to the publisher or
+       to a supervisory authority, WITHOUT REQUIRING THE REQUESTER TO IDENTIFY
+       THEMSELVES.
+
+MRT-4  ATTRIBUTION APPEARS AT OUTPUT
+       Where the work is quoted or closely paraphrased in a generated output,
+       it is attributed.
+
+MRT-1 and MRT-4 specify what the CC BY 4.0 attribution requirement is
+understood to require in a machine context. MRT-2 and MRT-3 are asked as a
+preference signal and, where the work is obtained under contractual terms of
+access, as terms of that contract.
+
+
+4. RESERVATION
+
+Where the conditions above are not met, rights are reserved under Article 4(3)
+of Directive (EU) 2019/790 in respect of text and data mining carried out for
+the development or training of AI systems. The reservation is expressed in
+machine readable form at:
+
+  https://itcop.org/.well-known/tdmrep.json
+  https://itcop.org/licence/0pn-mrt-1.0.json
+
+
+5. EVIDENCE REQUESTS
+
+Requests under MRT-3 may be made without an account and without identifying
+the requester. The endpoint and its request format are described at:
+
+  https://itcop.org/reuse/evidence
+  https://itcop.org/reuse/evidence/index.json
+
+
+6. NOTICE TO CARRY ON A WORK
+
+  Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+  Machine reuse is additionally subject to the 0PN Machine Reuse Terms 1.0,
+  which specify attribution for training contexts and reserve rights under
+  Article 4(3) of Directive (EU) 2019/790. The Terms do not modify or restrict
+  the CC BY 4.0 grant. 0pn-mrt-1.0
+
+The final sentence is not optional.
+
+
+7. VERSIONING
+
+A change to any condition is a major version. A clarification that does not
+change what a party must do is a minor version. Superseded versions remain
+resolvable, so a party that recorded a version reference at collection can
+always show which terms it actually met.
