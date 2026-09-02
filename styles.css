@@ -444,6 +444,13 @@ h3 {
   border: 1px solid rgba(127, 211, 219, 0.35);
 }
 
+.badge-receipt-mark {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 0.5rem;
+}
+
 .badge-receipt-heading {
   color: var(--paper-white);
   font-size: 1.15rem;
@@ -716,4 +723,12 @@ h3 {
   border-left: 2px solid currentColor;
   padding-left: 0.75rem;
   margin-top: 0.5rem;
+}
+
+/* white paper / report section mark */
+.whitepaper-mark {
+  display: block;
+  width: 96px;
+  height: auto;
+  margin: 0 0 0.75rem;
 }

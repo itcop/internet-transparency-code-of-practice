@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>White paper for ITCoP.org: Transparency by Default. The Internet Transparency Stack, co-regulated identification, and Operational Transparency for AI</title>
+<title>Clean AI Receipts</title>
 <meta name="tdm-reservation" content="1">
 <meta name="tdm-policy" content="https://itcop.org/licence/0pn-mrt-1.0.json">
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
@@ -13,10 +13,10 @@
 {
   "@context": {"opn": "https://0pn.org/ns/undermark#"},
   "@type": "opn.undermark/1",
-  "umid": "um:477e58dad87d1789",
+  "umid": "um:78861df115fb835e",
   "material_assurance_tier": "L0",
   "signal_level": "L0-support",
-  "content_hash": "sha256:477e58dad87d1789",
+  "content_hash": "sha256:78861df115fb835e",
   "resolves_to": {
     "work": "https://itcop.org/paper/",
     "licence": "https://creativecommons.org/licenses/by/4.0/",
@@ -31,28 +31,32 @@
 <style>
 .paper { position: relative; z-index: 0; isolation: isolate; max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
 .paper::before { content: ""; position: fixed; inset: 0; background-image: url("/assets/0pn-watermark.svg"); background-position: center; background-repeat: no-repeat; background-size: min(60%, 30rem); opacity: 0.05; color: #14213d; pointer-events: none; z-index: 0; }
-.paper > *, .paper .paper-full, .paper .paper-gate, .paper .paper-receipt, .paper .paper-error, .paper .undermark-footer, #fullPaper { position: relative; z-index: 1; }
+.paper > *, .paper .paper-gate, .paper .paper-receipt, .paper .paper-error, .paper .undermark-footer { position: relative; z-index: 1; }
 .paper h1, .paper h2, .paper h3 { width: auto; max-width: none; }
-  .paper h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 1rem; }
+.paper h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 0.6rem; }
 .paper h2 { font-size: 1.35rem; margin: 2.4rem 0 0.6rem; border-top: 1px solid rgba(20,33,61,.12); padding-top: 1.4rem; }
 .paper h3 { font-size: 1.08rem; margin: 1.6rem 0 0.4rem; }
 .paper p, .paper li { line-height: 1.62; }
-.paper table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.92rem; }
-.paper th, .paper td { border: 1px solid rgba(20,33,61,.18); padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
-.paper th { background: rgba(20,33,61,.05); }
-.paper pre { background: #f2f0ea; padding: 1rem; overflow-x: auto; border-radius: 6px; font-size: 0.85rem; }
-.paper blockquote { margin: 1rem 0; padding: 0.6rem 1rem; border-left: 3px solid #14213d; background: rgba(20,33,61,.04); font-style: italic; }
 .paper code { font-family: ui-monospace, Menlo, monospace; }
+.paper-hero { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
+.paper-hero img { width: 120px; max-width: 100%; height: auto; flex: 0 0 auto; }
+.paper-subtitle { font-size: 1.18rem; margin: 0 0 0.45rem; color: #14213d; }
+.paper-tagline { font-size: 1rem; margin: 0 0 1rem; color: rgba(20,33,61,.86); }
+.paper-byline { color: #14213d; font-size: 0.98rem; margin: 0 0 1rem; }
+.paper-review { margin: 0 0 1.4rem; font-weight: 600; color: #7a1f1f; }
 .paper-notice { background: #fff4e0; border: 1px solid #d9a441; border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0 2rem; font-size: 0.9rem; }
-.paper-byline { color: #14213d; font-size: 0.98rem; margin: 0 0 1.5rem; }
+.paper-proposition { margin: 1.5rem 0 0; font-size: 1.08rem; font-weight: 700; color: #14213d; }
 .paper-gate { margin: 2.5rem 0 0; padding: 1.5rem; border: 1px solid #d9a441; border-radius: 10px; background: #fff9ef; color: #14213d; }
 .paper-gate button { margin-top: 1rem; padding: 0.8rem 1.2rem; border: 1px solid #14213d; border-radius: 999px; background: #14213d; color: #fff4e0; font: inherit; cursor: pointer; }
 .paper-gate button[disabled] { opacity: 0.7; cursor: wait; }
 .paper-receipt { margin-top: 1rem; padding: 1rem 1.1rem; border: 1px solid #d9a441; border-radius: 8px; background: #fff4e0; }
 .paper-error { margin-top: 1rem; padding: 1rem 1.1rem; border: 1px solid #9c2f2f; border-radius: 8px; background: #fff0eb; color: #7a1f1f; }
-.paper-full { margin-top: 2.5rem; }
+.paper-download { display: inline-block; margin-top: 1rem; color: #14213d; font-weight: 600; }
 .undermark-footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid rgba(20,33,61,.18); color: rgba(20,33,61,.72); font-size: 0.82rem; }
 .undermark-footer p { margin: 0; }
+@media (max-width: 640px) {
+  .paper-hero { flex-direction: column; }
+}
 @media print {
   .paper::before { opacity: 0.03; }
 }
@@ -60,42 +64,57 @@
 </head>
 <body>
 <main class="paper">
-<h1>White paper for ITCoP.org: Transparency by Default. The Internet Transparency Stack, co-regulated identification, and Operational Transparency for AI</h1>
-<p class="paper-byline">By Mark Lizar and Michele Drgon / Transparency and Consent Interoperability Expert Group (TCIEG) / Version 0.1 for external review, 31 August 2026</p>
-<div class="paper-notice"><strong>Reuse notice.</strong> Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Machine reuse is additionally subject to the 0PN Machine Reuse Terms 1.0, which specify attribution for training contexts and reserve rights under Article 4(3) of Directive (EU) 2019/790. The Terms do not modify or restrict the CC BY 4.0 grant. 0pn-mrt-1.0</div>
+<section class="paper-hero">
+<img src="/assets/dfc-itcop.png" alt="Internet Transparency Code of Practice">
+<div>
+<h1>Clean AI Receipts</h1>
+<p class="paper-subtitle">Operational governance for secure knowledge models</p>
+<p class="paper-tagline">How a machine readable receipt can turn AI governance from retrospective policy claims into inspectable evidence of authority, purpose, and provenance.</p>
+<p class="paper-byline">Transparency and Consent Interoperability Expert Group (TCIEG). External review draft, version 0.1, 1 September 2026. Internet Transparency Code of Practice.</p>
+<p class="paper-review">This document is unblessed until TCIEG review is complete. It describes a prototype demonstration and proposed governance architecture. It does not claim certification, legal compliance, or production deployment.</p>
+</div>
+</section>
+<div class="paper-notice"><strong>Reuse notice.</strong> CC BY 4.0 plus 0PN Machine Reuse Terms 1.0, version <code>0pn-mrt-1.0-2026-08-31</code>.</div>
 <h2>Executive summary</h2>
-<p>The internet runs on a promise. Accept the policy, hand over the data, and trust that accountability exists somewhere behind the interface. That promise is now failing in public, because artificial intelligence banks human knowledge at a scale no privacy policy was written to govern, and because personal data crosses borders faster than any regulator can follow it.</p>
-<p>The question a person should be able to answer before identifying themselves, is who is accountable for this, for what purpose, under what authority, and where does my personal information go. Currently there are no answers that anyone can inspect.</p>
-<p>This paper sets out the correction in three connected parts.</p>
-<ul>
-<li>The Internet Transparency Stack is a layered reference architecture that runs from law or treaty obligation down to machine readable record, and from record back up to regulator. It locates the missing layer precisely: the connection between a conformant consent record and the law or treaty obligation it is supposed to satisfy.</li>
-<li>Co-regulated identification is what that architecture makes possible at the point of interaction. Two rule sets operate on the same identifier, the organisation's own rules and the public rules of treaty, law and standards, with the public rules expressed as a record structure that can be inspected before identification is demanded.</li>
-<li>Operational Transparency for AI applies the same mechanism to systems deployed by many parties across many jurisdictions. Every participant gives notice for the scope of work it performs, and that notice becomes the input the next participant builds against and tests.</li>
-</ul>
-<p>The common element is a record generated by the operation rather than a document written about it afterwards. Transparency that cannot be checked is merely a promise. Transparency that produces a record is evidence.</p>
-<p>None of this requires a new protocol, a new identification technology, or the disclosure of trade secrets, model weights or dataset contents. It requires that the governance record about a data flow be as portable as the data flow itself.</p>
+<p>AI governance today depends heavily on policies, assessments, model cards, and audit reports written about a system. These usually remain with the organisation making the claim and are reviewed after data has been collected, knowledge reused, or a model deployed. The Clean AI receipt demonstration tests a different approach: it represents governance as a machine readable receipt generated for a defined activity in the AI lifecycle. The receipt identifies the accountable participant, the scope of work, the applicable notice version, the authority relied on for data or knowledge reuse, relevant jurisdictions, upstream notice references, the current authorization state, and the integrity evidence needed to detect silent changes. It does not expose model weights, dataset contents, trade secrets, or the identity of a person inspecting the record. It exposes the governance conditions surrounding the knowledge model. That is Clean AI: an AI system that can produce independently inspectable evidence of who is accountable, what knowledge was used, for which purpose, under which authority, and whether that authority remains current.</p>
+<p class="paper-proposition">Dirty AI asks for trust. Clean AI carries evidence.</p>
 <section class="paper-gate">
-<p>Transparency and Consent Interoperability Expert Group (TCIEG) is accountable for this public white paper. Contact info@tcieg.org.</p>
-<p>You are reading a public white paper.</p>
-<p>The terms are Creative Commons Attribution 4.0 International (CC BY 4.0) plus the 0PN Machine Reuse Terms 1.0, version reference <code>0pn-mrt-1.0-2026-08-31</code>.</p>
-<p>Acknowledging this notice issues an anonymous knowledge reuse AI Receipt and returns the full paper.</p>
-<button type="button" id="ackBtn">Acknowledge notice and open the full paper</button>
+<h2>Notice</h2>
+<p>Accountable party: Transparency and Consent Interoperability Expert Group (TCIEG). Contact: info@tcieg.org.</p>
+<p>Purpose: download the Clean AI Receipts report.</p>
+<p>Terms: Creative Commons Attribution 4.0 International (CC BY 4.0) plus the 0PN Machine Reuse Terms 1.0, version reference <code>0pn-mrt-1.0-2026-08-31</code>.</p>
+<p>Acknowledging this notice issues an anonymous knowledge reuse AI receipt and returns the report as a PDF.</p>
+<button type="button" id="ackBtn">Acknowledge notice and download the report (PDF)</button>
 <div id="receiptPanel" class="paper-receipt" hidden></div>
 <div id="errorPanel" class="paper-error" hidden></div>
+<a id="downloadLink" class="paper-download" href="#" hidden>Your download has started; if it did not, click here</a>
 </section>
-<div id="fullPaper"></div>
-<footer class="undermark-footer"><p>0PN undermark. This document links to its reuse terms, the 0PN Machine Reuse Terms 1.0 (version 0pn-mrt-1.0-2026-08-31), and its anonymous reuse evidence route at itcop.org/reuse/evidence. Content reference 477e58dad87d1789. This is a Level 0 provenance seed, not a signed cryptographic undermark; the resolver is forthcoming.</p></footer>
+<footer class="undermark-footer"><p>0PN undermark. This document links to its reuse terms, the 0PN Machine Reuse Terms 1.0 (version 0pn-mrt-1.0-2026-08-31), and its anonymous reuse evidence route at itcop.org/reuse/evidence. Content reference 78861df115fb835e. This is a Level 0 provenance seed, not a signed cryptographic undermark; the resolver is forthcoming.</p></footer>
 </main>
 <script>
 const ackBtn = document.getElementById("ackBtn");
 const receiptPanel = document.getElementById("receiptPanel");
 const errorPanel = document.getElementById("errorPanel");
-const fullPaper = document.getElementById("fullPaper");
+const downloadLink = document.getElementById("downloadLink");
+
+function createReceiptLine(label, value) {
+  const line = document.createElement("p");
+  const strong = document.createElement("strong");
+  strong.textContent = label + ": ";
+  const span = document.createElement("span");
+  span.textContent = value;
+  line.append(strong, span);
+  return line;
+}
 
 ackBtn.addEventListener("click", async () => {
   ackBtn.disabled = true;
   errorPanel.hidden = true;
   errorPanel.textContent = "";
+  receiptPanel.hidden = true;
+  receiptPanel.innerHTML = "";
+  downloadLink.hidden = true;
+  downloadLink.removeAttribute("href");
 
   try {
     const res = await fetch("/paper/read", {
@@ -108,48 +127,74 @@ ackBtn.addEventListener("click", async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Request failed");
+      let message = "The report could not be delivered right now.";
+      try {
+        const errorData = await res.json();
+        if (errorData && typeof errorData.error === "string") {
+          message = errorData.error;
+        }
+      } catch {
+        if (res.status) {
+          message = "The report could not be delivered right now. Status " + res.status + ".";
+        }
+      }
+      throw new Error(message);
     }
 
     const data = await res.json();
-    receiptPanel.innerHTML = "";
+    if (!data || !data.receipt || typeof data.filename !== "string" || typeof data.pdf_base64 !== "string") {
+      throw new Error("The report response was incomplete.");
+    }
 
     const receiptTitle = document.createElement("p");
-    receiptTitle.textContent = "Client facing demo receipt";
-    receiptTitle.style.fontWeight = "700";
+    const receiptTitleStrong = document.createElement("strong");
+    receiptTitleStrong.textContent = "Receipt";
+    receiptTitle.append(receiptTitleStrong);
 
-    const receiptId = document.createElement("p");
-    receiptId.textContent = "";
-    receiptId.append("Receipt ID: ");
-    const receiptIdValue = document.createElement("span");
-    receiptIdValue.textContent = data.receipt.receipt_id;
-    receiptId.append(receiptIdValue);
+    const receiptNote = document.createElement("p");
+    receiptNote.textContent = "This is a client-facing demo receipt.";
 
-    const issuedAt = document.createElement("p");
-    issuedAt.textContent = "";
-    issuedAt.append("Issued at: ");
-    const issuedAtValue = document.createElement("span");
-    issuedAtValue.textContent = data.receipt.presented_at;
-    issuedAt.append(issuedAtValue);
+    const termsVersionReference = data.receipt.notice_version_reference || (
+      data.receipt.data_authority &&
+      data.receipt.data_authority.published_work &&
+      data.receipt.data_authority.published_work.terms_version_reference
+    ) || "";
 
-    const termsVersion = document.createElement("p");
-    termsVersion.textContent = "";
-    termsVersion.append("Terms version reference: ");
-    const termsVersionValue = document.createElement("span");
-    termsVersionValue.textContent = data.receipt.data_authority.published_work.terms_version_reference;
-    termsVersion.append(termsVersionValue);
-
-    receiptPanel.append(receiptTitle, receiptId, issuedAt, termsVersion);
+    receiptPanel.append(
+      receiptTitle,
+      createReceiptLine("receipt_id", data.receipt.receipt_id || ""),
+      createReceiptLine("presented_at", data.receipt.presented_at || ""),
+      createReceiptLine("terms_version_reference", termsVersionReference),
+      receiptNote
+    );
     receiptPanel.hidden = false;
-    fullPaper.innerHTML = data.paper_html;
+
+    const normalizedBase64 = data.pdf_base64.replace(/\s+/g, "");
+    const binary = atob(normalizedBase64);
+    const bytes = new Uint8Array(binary.length);
+    for (let index = 0; index < binary.length; index += 1) {
+      bytes[index] = binary.charCodeAt(index);
+    }
+
+    const pdfBlob = new Blob([bytes], { type: "application/pdf" });
+    const objectUrl = URL.createObjectURL(pdfBlob);
+    downloadLink.href = objectUrl;
+    downloadLink.download = data.filename;
+    downloadLink.hidden = false;
+
+    const downloadTrigger = document.createElement("a");
+    downloadTrigger.href = objectUrl;
+    downloadTrigger.download = data.filename;
+    downloadTrigger.hidden = true;
+    document.body.append(downloadTrigger);
+    downloadTrigger.click();
+    downloadTrigger.remove();
+
     ackBtn.hidden = true;
   } catch (error) {
-    errorPanel.textContent = "The full paper could not be loaded right now. Please try again.";
+    errorPanel.textContent = error instanceof Error ? error.message : "The report could not be delivered right now.";
     errorPanel.hidden = false;
-  } finally {
-    if (!ackBtn.hidden) {
-      ackBtn.disabled = false;
-    }
+    ackBtn.disabled = false;
   }
 });
 </script>
