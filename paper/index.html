@@ -78,6 +78,259 @@
 <h2>Executive summary</h2>
 <p>AI governance today depends heavily on policies, assessments, model cards, and audit reports written about a system. These usually remain with the organisation making the claim and are reviewed after data has been collected, knowledge reused, or a model deployed. The Clean AI receipt demonstration tests a different approach: it represents governance as a machine readable receipt generated for a defined activity in the AI lifecycle. The receipt identifies the accountable participant, the scope of work, the applicable notice version, the authority relied on for data or knowledge reuse, relevant jurisdictions, upstream notice references, the current authorization state, and the integrity evidence needed to detect silent changes. It does not expose model weights, dataset contents, trade secrets, or the identity of a person inspecting the record. It exposes the governance conditions surrounding the knowledge model. That is Clean AI: an AI system that can produce independently inspectable evidence of who is accountable, what knowledge was used, for which purpose, under which authority, and whether that authority remains current.</p>
 <p class="paper-proposition">Dirty AI asks for trust. Clean AI carries evidence.</p>
+<style>
+.caid { margin: 2rem 0 0.5rem; }
+.caid-frame { width: 100%; max-width: 46rem; margin: 0 auto; display: block; }
+.caid-svg { width: 100%; height: auto; display: block; background: #ffffff; border: 1px solid rgba(12,41,60,.16); border-radius: 10px; }
+.caid-cap { text-align: center; font-size: 0.95rem; color: #0c293c; margin: 0.7rem auto 0; max-width: 40rem; min-height: 2.6em; }
+.caid-cap b { display: block; font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: #468d32; margin-bottom: 0.2rem; }
+.caid-controls { text-align: center; margin: 0.4rem 0 0; }
+.caid-replay { padding: 0.45rem 1rem; border: 1px solid #0c293c; border-radius: 999px; background: #fff; color: #0c293c; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.caid-replay:hover { background: #0c293c; color: #fff; }
+.caid-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.caid-node { fill: #ffffff; stroke: #0c293c; stroke-width: 2; }
+.caid-node-fill { fill: #0c293c; }
+.caid-edge { fill: none; stroke: #0c293c; stroke-width: 2; }
+.caid-edge-soft { fill: none; stroke: rgba(12,41,60,.35); stroke-width: 2; }
+.caid-amber { fill: #fff4e0; stroke: #d9a441; stroke-width: 2; }
+.caid-amber-edge { fill: none; stroke: #d9a441; stroke-width: 2; }
+.caid-green { fill: #468d32; }
+.caid-green-edge { fill: none; stroke: #468d32; stroke-width: 2; }
+.caid-label { font-family: Inter, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; fill: #0c293c; }
+.caid-label-sm { font-family: Inter, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #0c293c; }
+.caid-label-w { fill: #ffffff; }
+
+/* Scene visibility: at rest every scene is drawn (static fallback). When JS marks the
+   container as animatable, hide non-active scenes and drive draw-on/motion by active index. */
+[data-caid-active] .caid-svg [data-caid-scene] { opacity: 0; transition: opacity .5s ease; }
+[data-caid-active] .caid-particle { opacity: 0; }
+[data-caid-active] .caid-draw { stroke-dasharray: 320; stroke-dashoffset: 320; }
+[data-caid-active] .caid-mint { opacity: 0; transform: translateX(-14px); transition: opacity .6s ease, transform .6s ease; }
+[data-caid-active] .caid-glow { opacity: 0; }
+
+[data-caid-active="1"] .caid-svg [data-caid-scene="1"],
+[data-caid-active="2"] .caid-svg [data-caid-scene="2"],
+[data-caid-active="3"] .caid-svg [data-caid-scene="3"],
+[data-caid-active="4"] .caid-svg [data-caid-scene="4"],
+[data-caid-active="5"] .caid-svg [data-caid-scene="5"],
+[data-caid-active="6"] .caid-svg [data-caid-scene="6"],
+[data-caid-active="7"] .caid-svg [data-caid-scene="7"] { opacity: 1; }
+
+[data-caid-active="1"] [data-caid-scene="1"] .caid-token { animation: caid-stream 2.4s ease-in-out infinite; }
+[data-caid-active="2"] [data-caid-scene="2"] .caid-draw { animation: caid-draw-on 1.1s ease forwards; }
+[data-caid-active="3"] [data-caid-scene="3"] .caid-mint { animation: caid-mint-in .7s ease .5s forwards; }
+[data-caid-active="4"] [data-caid-scene="4"] .caid-draw { animation: caid-draw-on 1.1s ease forwards; }
+[data-caid-active="4"] [data-caid-scene="4"] .caid-particle { opacity: 1; animation: caid-travel 3s linear .8s 1 forwards; }
+[data-caid-active="5"] [data-caid-scene="5"] .caid-mint { animation: caid-mint-in .5s ease forwards; }
+[data-caid-active="5"] [data-caid-scene="5"] .caid-r2 { animation-delay: .35s; }
+[data-caid-active="5"] [data-caid-scene="5"] .caid-r3 { animation-delay: .7s; }
+[data-caid-active="5"] [data-caid-scene="5"] .caid-r4 { animation-delay: 1.05s; }
+[data-caid-active="5"] [data-caid-scene="5"] .caid-draw { animation: caid-draw-on 1.4s ease .4s forwards; }
+[data-caid-active="6"] [data-caid-scene="6"] .caid-draw { animation: caid-draw-on 1.3s ease .4s forwards; }
+[data-caid-active="6"] [data-caid-scene="6"] .caid-mint { animation: caid-mint-in .6s ease forwards; }
+[data-caid-active="7"] [data-caid-scene="7"] .caid-glow { opacity: 1; animation: caid-settle 1s ease forwards; }
+
+@keyframes caid-draw-on { to { stroke-dashoffset: 0; } }
+@keyframes caid-mint-in { to { opacity: 1; transform: translateX(0); } }
+@keyframes caid-stream { 0% { opacity: 0; transform: translateX(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateX(170px); } }
+@keyframes caid-travel { to { offset-distance: 100%; } }
+@keyframes caid-settle { 0% { opacity: 0; transform: scale(.8); } 100% { opacity: 1; transform: scale(1); } }
+
+.caid-particle { offset-path: path("M 250 300 L 430 300 L 610 300 L 790 300"); offset-distance: 0%; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-caid-active] .caid-svg [data-caid-scene] { opacity: 1; }
+  [data-caid-active] .caid-draw { stroke-dasharray: none; stroke-dashoffset: 0; }
+  [data-caid-active] .caid-mint { opacity: 1; transform: none; }
+  [data-caid-active] .caid-glow { opacity: 1; }
+  [data-caid-active] .caid-particle { opacity: 1; offset-distance: 100%; }
+  [data-caid-active] .caid-token { animation: none; opacity: 1; }
+  .caid-controls { display: none; }
+}
+@media print {
+  .caid-svg [data-caid-scene] { opacity: 1 !important; }
+  .caid-controls { display: none; }
+}
+</style>
+<section class="caid" data-caid aria-labelledby="caid-heading">
+<h3 id="caid-heading" class="caid-sr">How a Clean AI receipt works, in seven steps</h3>
+<ol class="caid-sr">
+<li>Dirty AI takes in data and knowledge with no record. You are told accountability exists.</li>
+<li>At the threshold a signpost verifies who is accountable before the operation proceeds.</li>
+<li>A notice is acknowledged and an anonymous receipt is issued from it.</li>
+<li>The receipt resolves to a Controller Identification Record, a Notice Event Log, and an evidence route.</li>
+<li>Each lifecycle participant, Designer, Developer, Trainer, and Deployer, issues a receipt that references the one before it.</li>
+<li>Model output carries an undermark that resolves back to the evidence chain.</li>
+<li>Clean AI carries the 0PN mark, so accountability can be verified.</li>
+</ol>
+<svg class="caid-svg caid-frame" viewBox="0 0 960 540" role="img" aria-labelledby="caid-title caid-desc" preserveAspectRatio="xMidYMid meet">
+<title id="caid-title">The Clean AI receipt flow</title>
+<desc id="caid-desc">A seven step diagram: from ungoverned dirty AI, through a threshold check, to a notice and anonymous receipt, its resolution chain, the participant lifecycle, an undermark on output, and finally clean AI bearing the 0PN mark.</desc>
+
+<g data-caid-scene="1">
+<rect class="caid-node" x="120" y="70" width="150" height="46" rx="10"/>
+<text class="caid-label" x="195" y="99" text-anchor="middle">Data</text>
+<rect class="caid-node" x="120" y="140" width="150" height="46" rx="10"/>
+<text class="caid-label" x="195" y="169" text-anchor="middle">Knowledge</text>
+<rect class="caid-token" x="290" y="120" width="14" height="14" rx="3" fill="#0c293c"/>
+<rect class="caid-token" x="330" y="120" width="14" height="14" rx="3" fill="#468d32"/>
+<path class="caid-edge" d="M 270 93 L 620 120"/>
+<path class="caid-edge" d="M 270 163 L 620 150"/>
+<rect class="caid-node-fill" x="620" y="90" width="180" height="90" rx="14"/>
+<text class="caid-label caid-label-w" x="710" y="142" text-anchor="middle">Model</text>
+<text class="caid-label-sm" x="710" y="210" text-anchor="middle" fill="#9c2f2f">no record</text>
+</g>
+
+<g data-caid-scene="2">
+<rect class="caid-node" x="120" y="120" width="150" height="46" rx="10"/>
+<text class="caid-label" x="195" y="149" text-anchor="middle">Data, knowledge</text>
+<path class="caid-edge caid-draw" d="M 270 143 L 430 143"/>
+<line class="caid-draw caid-green-edge" x1="480" y1="90" x2="480" y2="210" stroke-width="6" stroke-linecap="round"/>
+<rect class="caid-green caid-draw" x="440" y="70" width="120" height="34" rx="6"/>
+<text class="caid-label caid-label-w" x="500" y="93" text-anchor="middle">Verify</text>
+<rect class="caid-node-fill" x="620" y="98" width="180" height="90" rx="14"/>
+<text class="caid-label caid-label-w" x="710" y="150" text-anchor="middle">Model</text>
+<text class="caid-label-sm" x="480" y="235" text-anchor="middle" fill="#468d32">threshold</text>
+</g>
+
+<g data-caid-scene="3">
+<rect class="caid-amber" x="150" y="120" width="200" height="120" rx="12"/>
+<text class="caid-label" x="250" y="152" text-anchor="middle">Notice (1FN)</text>
+<line class="caid-amber-edge" x1="175" y1="172" x2="325" y2="172"/>
+<text class="caid-label-sm" x="250" y="196" text-anchor="middle">accountable party</text>
+<text class="caid-label-sm" x="250" y="218" text-anchor="middle">purpose, terms</text>
+<path class="caid-edge" d="M 360 180 L 470 180"/>
+<text class="caid-label-sm" x="415" y="168" text-anchor="middle">acknowledge</text>
+<g class="caid-mint">
+<rect class="caid-amber" x="480" y="120" width="200" height="120" rx="12"/>
+<text class="caid-label" x="580" y="152" text-anchor="middle">Receipt</text>
+<line class="caid-amber-edge" x1="505" y1="172" x2="655" y2="172"/>
+<text class="caid-label-sm" x="580" y="196" text-anchor="middle">anonymous</text>
+<text class="caid-label-sm" x="580" y="218" text-anchor="middle">receipt_id, presented_at</text>
+</g>
+</g>
+
+<g data-caid-scene="4">
+<rect class="caid-amber" x="60" y="250" width="140" height="60" rx="10"/>
+<text class="caid-label-sm" x="130" y="285" text-anchor="middle">Receipt</text>
+<path class="caid-edge caid-draw" d="M 200 280 L 300 280"/>
+<rect class="caid-node" x="300" y="250" width="150" height="60" rx="10"/>
+<text class="caid-label-sm" x="375" y="277" text-anchor="middle">Controller ID</text>
+<text class="caid-label-sm" x="375" y="295" text-anchor="middle">Record (CIR)</text>
+<path class="caid-edge caid-draw" d="M 450 280 L 540 280"/>
+<rect class="caid-node" x="540" y="250" width="150" height="60" rx="10"/>
+<text class="caid-label-sm" x="615" y="277" text-anchor="middle">Notice Event</text>
+<text class="caid-label-sm" x="615" y="295" text-anchor="middle">Log (NEL)</text>
+<path class="caid-edge caid-draw" d="M 690 280 L 780 280"/>
+<rect class="caid-green" x="780" y="250" width="140" height="60" rx="10"/>
+<text class="caid-label-sm caid-label-w" x="850" y="285" text-anchor="middle">Evidence route</text>
+<circle class="caid-particle" r="7" fill="#d9a441"/>
+</g>
+
+<g data-caid-scene="5">
+<g class="caid-mint caid-r1">
+<rect class="caid-node" x="70" y="150" width="150" height="80" rx="10"/>
+<text class="caid-label-sm" x="145" y="185" text-anchor="middle">Designer</text>
+<rect class="caid-amber" x="105" y="198" width="80" height="22" rx="4"/>
+<text class="caid-label-sm" x="145" y="214" text-anchor="middle">receipt</text>
+</g>
+<path class="caid-edge-soft caid-draw" d="M 220 190 L 290 190"/>
+<g class="caid-mint caid-r2">
+<rect class="caid-node" x="290" y="150" width="150" height="80" rx="10"/>
+<text class="caid-label-sm" x="365" y="185" text-anchor="middle">Developer</text>
+<rect class="caid-amber" x="325" y="198" width="80" height="22" rx="4"/>
+<text class="caid-label-sm" x="365" y="214" text-anchor="middle">receipt</text>
+</g>
+<path class="caid-edge-soft caid-draw" d="M 440 190 L 510 190"/>
+<g class="caid-mint caid-r3">
+<rect class="caid-node" x="510" y="150" width="150" height="80" rx="10"/>
+<text class="caid-label-sm" x="585" y="185" text-anchor="middle">Trainer</text>
+<rect class="caid-amber" x="545" y="198" width="80" height="22" rx="4"/>
+<text class="caid-label-sm" x="585" y="214" text-anchor="middle">receipt</text>
+</g>
+<path class="caid-edge-soft caid-draw" d="M 660 190 L 730 190"/>
+<g class="caid-mint caid-r4">
+<rect class="caid-node" x="730" y="150" width="150" height="80" rx="10"/>
+<text class="caid-label-sm" x="805" y="185" text-anchor="middle">Deployer</text>
+<rect class="caid-amber" x="765" y="198" width="80" height="22" rx="4"/>
+<text class="caid-label-sm" x="805" y="214" text-anchor="middle">receipt</text>
+</g>
+<text class="caid-label-sm" x="475" y="270" text-anchor="middle" fill="#468d32">each references the one before it</text>
+</g>
+
+<g data-caid-scene="6">
+<rect class="caid-node-fill" x="120" y="120" width="180" height="90" rx="14"/>
+<text class="caid-label caid-label-w" x="210" y="172" text-anchor="middle">Model</text>
+<path class="caid-edge caid-draw" d="M 300 165 L 420 165"/>
+<g class="caid-mint">
+<rect class="caid-node" x="420" y="120" width="200" height="90" rx="12"/>
+<text class="caid-label-sm" x="520" y="152" text-anchor="middle">Output</text>
+<circle cx="520" cy="180" r="12" fill="none" stroke="#468d32" stroke-width="3"/>
+<circle cx="520" cy="180" r="4" fill="#0c293c"/>
+<text class="caid-label-sm" x="560" y="185" text-anchor="middle">undermark</text>
+</g>
+<path class="caid-green-edge caid-draw" d="M 520 210 L 520 320 L 760 320" stroke-dasharray="6 6"/>
+<rect class="caid-green" x="760" y="295" width="150" height="50" rx="10"/>
+<text class="caid-label-sm caid-label-w" x="835" y="325" text-anchor="middle">Evidence route</text>
+</g>
+
+<g data-caid-scene="7">
+<rect class="caid-node-fill" x="360" y="150" width="240" height="130" rx="18"/>
+<text class="caid-label caid-label-w" x="480" y="205" text-anchor="middle">Model</text>
+<g class="caid-glow" transform="translate(480 235) scale(1.1)">
+<path d="M 13 -13 A 19 19 0 1 0 13 13" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+<path d="M 12 -12.5 20.5 -8 12 -3.5" fill="none" stroke="#468d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="0" cy="0" r="7" fill="#ffffff"/>
+<circle cx="0" cy="0" r="3" fill="#0c293c"/>
+</g>
+<text class="caid-label-sm" x="480" y="315" text-anchor="middle" fill="#468d32">verified accountability</text>
+</g>
+</svg>
+<p class="caid-cap" data-caid-cap aria-live="polite"><b>Clean AI, step by step</b>Scroll to play the seven step flow, or press Replay.</p>
+<div class="caid-controls"><button type="button" class="caid-replay">Replay</button></div>
+</section>
+<script>
+(function () {
+  var root = document.querySelector("[data-caid]");
+  if (!root) return;
+  var cap = root.querySelector("[data-caid-cap]");
+  var replay = root.querySelector(".caid-replay");
+  var captions = [
+    ["Dirty AI", "Dirty AI asks for trust. Accountability you are told exists."],
+    ["The threshold", "Verify who is accountable before the operation proceeds."],
+    ["Notice to receipt", "A notice is acknowledged. An anonymous receipt is issued."],
+    ["Resolution chain", "The receipt resolves to an accountable record and an evidence route."],
+    ["Lifecycle chain", "Each participant issues a receipt that references the one before it."],
+    ["Undermark on output", "Output carries an undermark that resolves back to the chain."],
+    ["Clean AI", "Clean AI carries evidence. Accountability you can verify."]
+  ];
+  var durations = [3000, 3200, 3600, 4200, 4200, 3800, 3600];
+  var timers = [];
+  var played = false;
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+  function setScene(n) {
+    root.setAttribute("data-caid-active", String(n));
+    cap.innerHTML = "<b>" + captions[n - 1][0] + "</b>" + captions[n - 1][1];
+  }
+  function run() {
+    clearTimers();
+    var t = 0;
+    for (var i = 1; i <= 7; i++) {
+      (function (scene, delay) {
+        timers.push(setTimeout(function () { setScene(scene); }, delay));
+      })(i, t);
+      t += durations[i - 1];
+    }
+  }
+  replay.addEventListener("click", run);
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !played) { played = true; run(); }
+    });
+  }, { threshold: 0.4 });
+  io.observe(root);
+})();
+</script>
 <section class="paper-gate">
 <h2>Notice</h2>
 <p>Accountable party: Transparency and Consent Interoperability Expert Group (TCIEG). Contact: info@tcieg.org.</p>
