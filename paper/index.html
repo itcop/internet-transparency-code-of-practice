@@ -138,7 +138,6 @@
 .caid-particle { offset-path: path("M 250 300 L 430 300 L 610 300 L 790 300"); offset-distance: 0%; }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-caid-active] .caid-svg [data-caid-scene] { opacity: 1; }
   [data-caid-active] .caid-draw { stroke-dasharray: none; stroke-dashoffset: 0; }
   [data-caid-active] .caid-mint { opacity: 1; transform: none; }
   [data-caid-active] .caid-glow { opacity: 1; }
@@ -151,7 +150,7 @@
   .caid-controls { display: none; }
 }
 </style>
-<section class="caid" data-caid aria-labelledby="caid-heading">
+<section class="caid" data-caid data-caid-active="1" aria-labelledby="caid-heading">
 <h3 id="caid-heading" class="caid-sr">How a Clean AI receipt works, in seven steps</h3>
 <ol class="caid-sr">
 <li>Dirty AI takes in data and knowledge with no record. You are told accountability exists.</li>
@@ -324,7 +323,7 @@
   replay.addEventListener("click", run);
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting && !played) { played = true; run(); }
+      if (e.isIntersecting && !played) { played = true; if (matchMedia("(prefers-reduced-motion: reduce)").matches) { setScene(7); } else { run(); } }
     });
   }, { threshold: 0.4 });
   io.observe(root);
