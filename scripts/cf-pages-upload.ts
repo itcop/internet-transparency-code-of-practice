@@ -3,7 +3,9 @@ import { bytesToHex } from "@noble/hashes/utils.js";
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join, extname, relative, basename, dirname } from "path";
 
-const ROOT = "/tmp/mrt-stage/deploy";
+// Staging directory to publish. Override with ITCOP_DEPLOY_ROOT so a deploy does
+// not depend on a magic path existing from a previous session.
+const ROOT = process.env.ITCOP_DEPLOY_ROOT ?? "/tmp/mrt-stage/deploy";
 const ACCOUNT = "ed9b6757db93df52c9e2dd2c1606a594";
 const PROJECT = "itcop-org";
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
