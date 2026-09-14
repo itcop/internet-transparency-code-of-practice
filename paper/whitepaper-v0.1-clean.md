@@ -2,10 +2,10 @@
 
 
 By Mark Lizar and Michele Drgon
-Transparency and Consent Interoperability Expert Group (TCIEG)
+Transparency and Consent Interoperability Group (TCIEG)
 Version 0.1 for external review, 31 August 2026
 
-Author note. Mark Lizar is a member of the Canadian mirror committee to ISO/IEC JTC 1/SC 27/WG 5 and a contributor to the Kantara Initiative Anchored Notice and Consent Receipt Work Group. This interest is declared. Michele Drgon is a co-founder of the Transparency and Consent Interoperability Expert Group.
+Author note. Mark Lizar is a member of the Canadian mirror committee to ISO/IEC JTC 1/SC 27/WG 5 and a contributor to the Kantara Initiative Anchored Notice and Consent Receipt Work Group. This interest is declared. Michele Drgon is a co-founder of the Transparency and Consent Interoperability Group.
 
 ## Executive summary
 The internet runs on a promise. Accept the policy, hand over the data, and trust that accountability exists somewhere behind the interface. That promise is now failing in public, because artificial intelligence banks human knowledge at a scale no privacy policy was written to govern, and because personal data crosses borders faster than any regulator can follow it.

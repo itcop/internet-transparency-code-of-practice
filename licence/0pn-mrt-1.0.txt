@@ -4,7 +4,7 @@ A reciprocity layer for CC BY 4.0 works
 terms_id:                  0pn-mrt-1.0
 terms_version_reference:   0pn-mrt-1.0-2026-08-31
 issued:                    2026-08-31
-publisher:                 Transparency and Consent Interoperability Expert Group
+publisher:                 Transparency and Consent Interoperability Group
 base_licence:              https://creativecommons.org/licenses/by/4.0/
 base_licence_modified:     false
 contact:                   info@tcieg.org
