@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question or raise an objection
+    url: https://github.com/itcop/internet-transparency-code-of-practice/discussions
+    about: For anything that is not yet a proposed change to the text.
+  - name: Comment in private
+    url: mailto:info@tcieg.org
+    about: A comment made by email is not published with a name attached to it.
