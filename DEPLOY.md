@@ -8,9 +8,9 @@ git-connected one, and the Cloudflare GitHub App is not installed on the `itcop`
 organisation, so the connection cannot be made from here.
 
 `.github/workflows/deploy.yml` closes that gap. A push to `main` that touches the
-site stages the public tree, stamps a fresh asset version, uploads it through
-`scripts/cf-pages-upload.ts`, and then checks what is actually live. Repository
-governance files are excluded from what gets published.
+site stages the public tree, stamps a fresh asset version, deploys with
+**wrangler** via `cloudflare/wrangler-action`, and then checks what is actually
+live. Repository governance files are excluded from what gets published.
 
 ## One-time setup, still outstanding
 
@@ -27,6 +27,21 @@ able to deploy this one site and nothing else.
 
 The workflow runs only on `push` to `main` and on manual dispatch, so a pull
 request from a fork never receives the secret.
+
+## Why CI uses wrangler and local deploys do not
+
+**In CI, wrangler is the right tool.** The runner has a real node, and
+`cloudflare/wrangler-action` handles the install and the auth.
+
+**On Mark's machine it is not.** There is no node, and `bunx wrangler pages
+deploy` is a **silent no-op**: it prints the version banner, exits 0, and uploads
+nothing. A pseudo-TTY does not fix it. That is why `scripts/cf-pages-upload.ts`
+exists, talking to the Pages Direct Upload API directly, and why it stays.
+
+Two things follow. Never conclude a local wrangler deploy worked because it
+exited 0, and never conclude nothing is deployed because a local `wrangler pages
+deployment list` printed only a banner. Verify against the REST API or the live
+URL.
 
 ## Deploying by hand
 
@@ -50,5 +65,12 @@ token in use has cache-purge scope, so the query string is the mechanism.
 
 **Content types.** `_headers` sets `application/ld+json` for the machine reuse
 terms and the `tdm-reservation` and `tdm-policy` headers for every page. It must
-be included in whatever is uploaded. The deploy script treats it as a special
-file rather than an asset, and the workflow asserts the header afterwards.
+be included in whatever is uploaded. The staging step fails if it is missing, and
+the workflow asserts both headers on the live site afterwards.
+
+**The paper gate is an exact worker route.** `itcop.org/paper/read` is bound to
+the `itcop-paper-gate` worker with no trailing wildcard, and **an exact route does
+not match a URL carrying a query string**. Verifying it with a cache buster makes
+a correctly bound route look broken, because the request falls through to Pages
+instead. The workflow checks that path with no query string for exactly this
+reason. Every other check keeps its cache buster.

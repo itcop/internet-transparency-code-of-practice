@@ -1,9 +1,9 @@
 name: Deploy to itcop.org
 
-# The site is served by a Cloudflare Pages project in Direct Upload mode, which
-# Cloudflare will not convert to a git-connected project. Without this workflow
-# every commit needs a manual upload, which is why the live site once sat seven
-# days behind main.
+# The site is a Cloudflare Pages project in Direct Upload mode. Cloudflare will
+# not convert it to a git-connected project, and the Cloudflare GitHub App is not
+# installed on the itcop organisation, so commits do not reach the site on their
+# own. This workflow is what closes that gap.
 on:
   push:
     branches: [main]
@@ -12,6 +12,7 @@ on:
       - 'PROCESS.md'
       - 'LICENSE.md'
       - 'CONTRIBUTING.md'
+      - 'DEPLOY.md'
       - 'MRT-DEPLOY.md'
       - 'SPEC-*.md'
       - '.github/**'
@@ -29,20 +30,16 @@ jobs:
 
       - name: Fail early if the deploy credential is missing
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+          if [ -z "$TOKEN" ]; then
             echo "::error::CLOUDFLARE_API_TOKEN is not set."
             echo "Create a Cloudflare API token scoped to Account > Cloudflare Pages > Edit"
             echo "on account ed9b6757db93df52c9e2dd2c1606a594, then add it as a repository"
             echo "secret named CLOUDFLARE_API_TOKEN. Do not reuse a token that also carries"
-            echo "DNS or Workers scope."
+            echo "DNS or Workers scope. See DEPLOY.md."
             exit 1
           fi
-
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
 
       - name: Stage the public tree
         run: |
@@ -50,30 +47,32 @@ jobs:
           mkdir -p /tmp/itcop-stage
           rsync -a --delete \
             --exclude='.git' --exclude='.github' --exclude='scripts' \
+            --exclude='node_modules' --exclude='package.json' --exclude='bun.lockb' \
             --exclude='README.md' --exclude='PROCESS.md' --exclude='LICENSE.md' \
-            --exclude='CONTRIBUTING.md' --exclude='MRT-DEPLOY.md' --exclude='SPEC-*.md' \
-            --exclude='.gitignore' --exclude='paper-gate.worker.js' --exclude='.DS_Store' \
+            --exclude='CONTRIBUTING.md' --exclude='DEPLOY.md' --exclude='MRT-DEPLOY.md' \
+            --exclude='SPEC-*.md' --exclude='.gitignore' --exclude='paper-gate.worker.js' \
+            --exclude='.DS_Store' \
             ./ /tmp/itcop-stage/
+          test -f /tmp/itcop-stage/_headers || { echo "::error::_headers missing from the staged tree"; exit 1; }
 
       - name: Stamp the asset version
         run: |
           # app.js is served with max-age=14400, so without a fresh query string a
-          # corrected file is deployed but browsers keep the old one for four hours.
-          # Stamped in the staging tree so no commit is written back to the branch.
+          # corrected file reaches the origin but not the browser for four hours.
+          # No token in use has cache-purge scope, so the query string is the
+          # mechanism. Stamped in the staging tree, never committed back.
           STAMP="${GITHUB_SHA::12}"
           perl -pi -e "s/(app\.js|styles\.css)\?v=[^\"']*/\$1?v=$STAMP/g" /tmp/itcop-stage/index.html
-          grep -o 'v=[^"]*' /tmp/itcop-stage/index.html | head -2
+          grep -o '?v=[^"]*' /tmp/itcop-stage/index.html
 
-      - name: Install deploy dependency
-        run: bun add @noble/hashes
+      - name: Deploy with wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ed9b6757db93df52c9e2dd2c1606a594
+          command: pages deploy /tmp/itcop-stage --project-name=itcop-org --branch=main
 
-      - name: Deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          ITCOP_DEPLOY_ROOT: /tmp/itcop-stage
-        run: bun scripts/cf-pages-upload.ts
-
-      - name: Verify what is live
+      - name: Verify what is actually live
         run: |
           sleep 10
           fail=0
@@ -89,6 +88,20 @@ jobs:
           check /licence/0pn-mrt-1.0.txt   text/plain
           check /.well-known/tdmrep.json   application/json
           check /reuse/evidence/           text/html
-          # The reuse terms travel with the page, so assert the header too.
+
+          # The paper gate must refuse an unacknowledged request rather than serve
+          # anything. 403 is the healthy answer here, not 200. Checked in both
+          # forms because an exact route does not match a URL carrying a query
+          # string: until the route was widened to /paper/read*, appending one
+          # fell through to Pages and returned the homepage with status 200.
+          for u in "https://itcop.org/paper/read" "https://itcop.org/paper/read?cb=$RANDOM"; do
+            gate=$(curl -s -o /dev/null -w "%{http_code}" "$u")
+            printf '%-34s %s\n' "${u#https://itcop.org}" "$gate"
+            [ "$gate" = "403" ] || { echo "::error::paper gate should refuse with 403, got $gate for $u"; fail=1; }
+          done
+
+          # The reuse terms travel with the page, so assert the headers too.
           curl -sI "https://itcop.org/" | grep -qi '^tdm-reservation: 1' || { echo "::error::tdm-reservation header missing"; fail=1; }
+          curl -sI "https://itcop.org/" | grep -qi '^tdm-policy:' || { echo "::error::tdm-policy header missing"; fail=1; }
+
           exit $fail
