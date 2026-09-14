@@ -71,7 +71,7 @@ const i18n = {
     badge: {
       label: "Blue Register",
       heading: "Sign up for the ITCoP Transparency Signal Badge",
-      provenance: "A 0PN Transparency Lab project.",
+      provenance: "A project of the Transparency and Consent Interoperability Group (TCIEG).",
       bodyOne:
         "The ITCoP Transparency Signal Badge is a self-asserted transparency signal to enhance trust, issued from itcop.org. It marks an organisation's willingness to make notice, transparency, and consent inspectable in practice. It is not a certification or a verified seal.",
       bodyTwo:
@@ -160,7 +160,7 @@ const i18n = {
       loading: "Loading the directory.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, an initiative of Transparency Lab.",
+      accountability: "Internet Transparency Code of Practice, an initiative of the Transparency and Consent Interoperability Group (TCIEG).",
       contactLabel: "Contact: ",
       email: "info@itcop.org",
     },
@@ -237,7 +237,7 @@ const i18n = {
     badge: {
       label: "Registre bleu",
       heading: "Inscrivez-vous pour le badge de signal de transparence ITCoP",
-      provenance: "Un projet du 0PN Transparency Lab.",
+      provenance: "Un projet du Transparency and Consent Interoperability Group (TCIEG).",
       bodyOne:
         "Le badge de signal de transparence ITCoP est un signal de transparence auto-déclaré pour renforcer la confiance, émis par itcop.org. Il indique qu'une organisation accepte de rendre l'avis, la transparence et le consentement vérifiables dans la pratique. Ce n'est ni une certification ni un sceau vérifié.",
       bodyTwo:
@@ -326,7 +326,7 @@ const i18n = {
       loading: "Chargement du répertoire.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, une initiative de Transparency Lab.",
+      accountability: "Internet Transparency Code of Practice, une initiative du Transparency and Consent Interoperability Group (TCIEG).",
       contactLabel: "Contact : ",
       email: "info@itcop.org",
     },
@@ -616,7 +616,10 @@ const handleBadgeSubmit = (event, language) => {
   }
 };
 
-const REGISTRY_INDEX_URL = "https://ca1.0pn.org/registry/index.json";
+// The UK node holds the registrants. The Canada node is the Level 0 sandbox and
+// its register currently contains only a test fixture, which was being shown here
+// as though it were an entry.
+const REGISTRY_INDEX_URL = "https://uk1.0pn.org/registry/index.json";
 let directoryControllers = null;
 
 const setDirectoryNote = (container, text) => {
