@@ -1,0 +1,8 @@
+{
+  "name": "itcop-site",
+  "private": true,
+  "description": "Internet Transparency Code of Practice, itcop.org",
+  "dependencies": {
+    "@noble/hashes": "^1.5.0"
+  }
+}

@@ -1,0 +1,94 @@
+name: Deploy to itcop.org
+
+# The site is served by a Cloudflare Pages project in Direct Upload mode, which
+# Cloudflare will not convert to a git-connected project. Without this workflow
+# every commit needs a manual upload, which is why the live site once sat seven
+# days behind main.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'PROCESS.md'
+      - 'LICENSE.md'
+      - 'CONTRIBUTING.md'
+      - 'MRT-DEPLOY.md'
+      - 'SPEC-*.md'
+      - '.github/**'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-itcop
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail early if the deploy credential is missing
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is not set."
+            echo "Create a Cloudflare API token scoped to Account > Cloudflare Pages > Edit"
+            echo "on account ed9b6757db93df52c9e2dd2c1606a594, then add it as a repository"
+            echo "secret named CLOUDFLARE_API_TOKEN. Do not reuse a token that also carries"
+            echo "DNS or Workers scope."
+            exit 1
+          fi
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Stage the public tree
+        run: |
+          # Repository governance files are not part of the published site.
+          mkdir -p /tmp/itcop-stage
+          rsync -a --delete \
+            --exclude='.git' --exclude='.github' --exclude='scripts' \
+            --exclude='README.md' --exclude='PROCESS.md' --exclude='LICENSE.md' \
+            --exclude='CONTRIBUTING.md' --exclude='MRT-DEPLOY.md' --exclude='SPEC-*.md' \
+            --exclude='.gitignore' --exclude='paper-gate.worker.js' --exclude='.DS_Store' \
+            ./ /tmp/itcop-stage/
+
+      - name: Stamp the asset version
+        run: |
+          # app.js is served with max-age=14400, so without a fresh query string a
+          # corrected file is deployed but browsers keep the old one for four hours.
+          # Stamped in the staging tree so no commit is written back to the branch.
+          STAMP="${GITHUB_SHA::12}"
+          perl -pi -e "s/(app\.js|styles\.css)\?v=[^\"']*/\$1?v=$STAMP/g" /tmp/itcop-stage/index.html
+          grep -o 'v=[^"]*' /tmp/itcop-stage/index.html | head -2
+
+      - name: Install deploy dependency
+        run: bun add @noble/hashes
+
+      - name: Deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ITCOP_DEPLOY_ROOT: /tmp/itcop-stage
+        run: bun scripts/cf-pages-upload.ts
+
+      - name: Verify what is live
+        run: |
+          sleep 10
+          fail=0
+          check() {
+            read -r code type < <(curl -sL -o /dev/null -w "%{http_code} %{content_type}" "https://itcop.org$1?cb=$RANDOM")
+            printf '%-34s %s %s\n' "$1" "$code" "$type"
+            [ "$code" = "200" ] || fail=1
+            case "$type" in *"$2"*) ;; *) fail=1 ;; esac
+          }
+          check /                          text/html
+          check /paper/                    text/html
+          check /licence/0pn-mrt-1.0.json  application/ld+json
+          check /licence/0pn-mrt-1.0.txt   text/plain
+          check /.well-known/tdmrep.json   application/json
+          check /reuse/evidence/           text/html
+          # The reuse terms travel with the page, so assert the header too.
+          curl -sI "https://itcop.org/" | grep -qi '^tdm-reservation: 1' || { echo "::error::tdm-reservation header missing"; fail=1; }
+          exit $fail
