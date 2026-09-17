@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">Figure 1. The Internet Transparency Stack</title>
+  <desc id="fig1-desc">Seven layers read from the bottom up. Foundation, framework, presentation, record, evidence, treaty and enforcement. A dashed line connects the record at layer four to the treaty at layer six, marking the gap that the evidence layer at five closes.</desc>
+  <style>
+    .n{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+    .num{font-size:13px;font-weight:700;fill:#6b7280}
+    .inst{font-size:14.5px;font-weight:700;fill:#111827}
+    .fn{font-size:12.5px;fill:#4b5563}
+    .cap{font-size:12px;fill:#6b7280;font-style:italic}
+    .band{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1}
+    .band5{fill:#fff7ed;stroke:#f59e0b;stroke-width:1.6}
+  </style>
+
+  <g class="n">
+    <rect class="band"  x="60" y="40"  width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="63">7</text><text class="inst" x="104" y="63">Internet Transparency Code of Practice</text>
+    <text class="fn"   x="104" y="83">Enforcement. Treaty and legal obligations made operational for digital environments</text>
+
+    <rect class="band"  x="60" y="108" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="131">6</text><text class="inst" x="104" y="131">Convention 108, with Convention 108+ and CETS 225 pending</text>
+    <text class="fn"   x="104" y="151">Treaty. Cross border transparency and AI governance obligations</text>
+
+    <rect class="band5" x="60" y="176" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="199">5</text><text class="inst" x="104" y="199">ANCR extension to ISO/IEC TS 27560</text>
+    <text class="fn"   x="104" y="219">Evidence. Machine readable proof of disclosure, authority and rights context</text>
+
+    <rect class="band"  x="60" y="244" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="267">4</text><text class="inst" x="104" y="267">ISO/IEC TS 27560:2023</text>
+    <text class="fn"   x="104" y="287">Record. Consent record and receipt information structure</text>
+
+    <rect class="band"  x="60" y="312" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="335">3</text><text class="inst" x="104" y="335">ISO/IEC 29184</text>
+    <text class="fn"   x="104" y="355">Presentation. Online privacy notice and consent content and structure</text>
+
+    <rect class="band"  x="60" y="380" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="403">2</text><text class="inst" x="104" y="403">ISO/IEC 29100</text>
+    <text class="fn"   x="104" y="423">Framework. Technology neutral privacy framework, terminology, actors and roles</text>
+
+    <rect class="band"  x="60" y="448" width="780" height="56" rx="4"/>
+    <text class="num"  x="78"  y="471">1</text><text class="inst" x="104" y="471">OECD cross border guidelines, Convention 108</text>
+    <text class="fn"   x="104" y="491">Foundation. Notice and awareness principles, carried by every instrument since</text>
+
+    <path d="M 52 272 C 20 272, 20 136, 52 136" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-dasharray="5 4"/>
+    <text class="cap" x="60" y="528">The dashed line marks the connection between the record at layer 4 and the treaty at layer 6,</text>
+    <text class="cap" x="60" y="545">which is the gap that layer 5 closes. Read the stack from the bottom up.</text>
+  </g>
+</svg>
