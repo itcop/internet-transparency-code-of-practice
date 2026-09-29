@@ -9,9 +9,9 @@ covered by the same terms.
 **0PN Machine Reuse Terms 1.0** applying to machine reuse.
 
 - Base licence: https://creativecommons.org/licenses/by/4.0/
-- Machine reuse terms: [`/licence/0pn-mrt-1.0.txt`](licence/0pn-mrt-1.0.txt)
-  and [`/licence/0pn-mrt-1.0.json`](licence/0pn-mrt-1.0.json)
-- Terms version reference: `0pn-mrt-1.0-2026-08-31`
+- Machine reuse terms: [`/licence/0pn-mrt-1.1.txt`](licence/0pn-mrt-1.1.txt)
+  and [`/licence/0pn-mrt-1.1.json`](licence/0pn-mrt-1.1.json)
+- Terms version reference: `0pn-mrt-1.1-2026-09-29` (supersedes `0pn-mrt-1.0-2026-08-31`, which remains resolvable)
 - Reservation expressed as a record: [`/.well-known/tdmrep.json`](.well-known/tdmrep.json)
 
 These are the terms the white paper already carries at

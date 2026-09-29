@@ -86,6 +86,10 @@ jobs:
           check /paper/                    text/html
           check /licence/0pn-mrt-1.0.json  application/ld+json
           check /licence/0pn-mrt-1.0.txt   text/plain
+          check /licence/0pn-mrt-1.1.json  application/ld+json
+          check /licence/0pn-mrt-1.1.txt   text/plain
+          check /licence/0pn-mrt-1.0/      text/html
+          check /licence/0pn-mrt-1.1/      text/html
           check /.well-known/tdmrep.json   application/json
           check /reuse/evidence/           text/html
 

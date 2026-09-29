@@ -65,7 +65,7 @@ const i18n = {
       byline: "Operational governance for secure knowledge models. TCIEG external review draft, version 0.1.",
       bodyOne: "Dirty AI asks for trust. Clean AI carries evidence. Clean AI is not a claim that a model is safe or lawful; it is an operating condition under which the authority, purpose, provenance, and accountable participants behind the use of data and knowledge can be inspected and tested.",
       bodyTwo: "The report walks through a working demonstration: governance represented as a machine readable receipt for a defined AI lifecycle activity, issued through the receipt gate on this site. Reading it presents a first notice and returns an anonymous knowledge reuse receipt; the report downloads as a PDF.",
-      notice: "Licensed under CC BY 4.0. Machine reuse is additionally subject to the 0PN Machine Reuse Terms 1.0, version reference 0pn-mrt-1.0-2026-08-31.",
+      notice: "Licensed under CC BY 4.0. Machine reuse is additionally subject to the 0PN Machine Reuse Terms 1.1, version reference 0pn-mrt-1.1-2026-09-29.",
       cta: "Read the report",
     },
     badge: {
@@ -231,7 +231,7 @@ const i18n = {
       byline: "Gouvernance opérationnelle pour des modèles de connaissance sécurisés. Projet de révision externe TCIEG, version 0.1.",
       bodyOne: "L'IA sale demande la confiance. L'IA propre apporte des preuves. L'IA propre n'affirme pas qu'un modèle est sûr ou licite ; c'est une condition d'exploitation sous laquelle l'autorité, la finalité, la provenance et les participants responsables derrière l'usage des données et des connaissances peuvent être inspectés et testés.",
       bodyTwo: "Le rapport décrit une démonstration concrète : la gouvernance représentée comme un reçu lisible par machine pour une activité définie du cycle de vie de l'IA, délivré au moyen de l'accès à reçu de ce site. Sa lecture présente d'abord un avis et renvoie un reçu anonyme de réutilisation de connaissances ; le rapport se télécharge en PDF.",
-      notice: "Sous licence CC BY 4.0. La réutilisation machine est en outre soumise aux 0PN Machine Reuse Terms 1.0, référence de version 0pn-mrt-1.0-2026-08-31.",
+      notice: "Sous licence CC BY 4.0. La réutilisation machine est en outre soumise aux 0PN Machine Reuse Terms 1.1, référence de version 0pn-mrt-1.1-2026-09-29.",
       cta: "Lire le rapport",
     },
     badge: {
