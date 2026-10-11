@@ -466,7 +466,7 @@ let lastReceipt = null;
 // JSON. We serve the self-backed badge (white rounded backing) so it renders
 // on any host background, light or dark, and the signatory walks away with the
 // mark itself.
-const BADGE_SVG_URL = "assets/0pn-badge-embed.svg";
+const BADGE_SVG_URL = "/assets/0pn-badge-embed.svg";
 
 const downloadBadge = async () => {
   let anchor;
@@ -549,7 +549,7 @@ const renderReceipt = (language, receipt) => {
   const badgeForm = document.querySelector("#badge-form");
   if (badgeForm) badgeForm.hidden = true;
   const heroIcon = document.querySelector("#badge-hero-icon");
-  if (heroIcon) heroIcon.src = "assets/activated-icon.png";
+  if (heroIcon) heroIcon.src = "/assets/activated-icon.png";
 };
 
 const handleBadgeSubmit = (event, language) => {
@@ -707,7 +707,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const badgeNotice = document.querySelector("#badge-notice");
       if (badgeNotice) badgeNotice.hidden = true;
       const heroIcon = document.querySelector("#badge-hero-icon");
-      if (heroIcon) heroIcon.src = "assets/grey-check.png";
+      if (heroIcon) heroIcon.src = "/assets/grey-check.png";
       badgeForm.hidden = false;
       const emailInput = badgeForm.querySelector("#badge-email");
       if (emailInput) {
