@@ -1,0 +1,21 @@
+{
+  "@type": "opn.undermark-index/1",
+  "resolver": "https://itcop.org/undermark/",
+  "registry": "https://globalprivacyrights.org/undermark/",
+  "note": "Level 0 undermarks: each resolves to its publisher, version and terms; none is signed. Request /undermark/<id> or /undermark/<id>.json.",
+  "undermarks": [
+    {
+      "undermark": "um:46c1dcda",
+      "title": "Transparency by Default for the Internet and AI: ITCoP, the Internet + AI Transparency Code of Practice",
+      "version": "0.5",
+      "record": "https://itcop.org/undermark/46c1dcda",
+      "origin_record": "https://tcieg.org/undermark/um:46c1dcda"
+    },
+    {
+      "undermark": "um:78861df115fb835e",
+      "title": "Clean AI Receipts",
+      "record": "https://itcop.org/undermark/78861df115fb835e",
+      "origin_record": "https://itcop.org/undermark/78861df115fb835e"
+    }
+  ]
+}

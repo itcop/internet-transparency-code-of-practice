@@ -1,0 +1,36 @@
+{
+  "@type": "opn.undermark/1",
+  "undermark": "um:46c1dcda",
+  "level": 0,
+  "note": "Level 0: resolvable to its publisher, version and terms; not signed.",
+  "work": {
+    "title": "Transparency by Default for the Internet and AI: ITCoP, the Internet + AI Transparency Code of Practice",
+    "version": "0.5",
+    "version_label": "Version 0.5, draft for external review, October 2026",
+    "published": "2026-10-05",
+    "url": "https://tcieg.org/whitepaper",
+    "authors": "Mark Lizar and Michele Drgon",
+    "publisher": "Transparency and Consent Interoperability Expert Group (TCIEG)",
+    "file": "ITCoP-Whitepaper-v0.5-external-review.pdf",
+    "sha256": "30cb8f9129beeddf0a1fefd87c815053c09ed66408870557f9b481fd75f1d893"
+  },
+  "controller_identity_record": "https://tcieg.org/.well-known/transparency/cir.json",
+  "terms": {
+    "licence": "https://creativecommons.org/licenses/by/4.0/",
+    "machine_reuse_terms": "0pn-mrt-1.1",
+    "terms_version_reference": "0pn-mrt-1.1-2026-09-29",
+    "terms_url": "https://itcop.org/licence/0pn-mrt-1.1.json",
+    "reservation": "Rights reserved under Article 4(3) of Directive (EU) 2019/790 for text and data mining where the terms are not met"
+  },
+  "ai_use": "An AI system that retrieves, cites or trains on this work under these terms can obtain a receipt for that use at https://insights.tcieg.org/ai/receipt.",
+  "resolution": {
+    "this_record": "https://itcop.org/undermark/46c1dcda",
+    "origin_record": "https://tcieg.org/undermark/um:46c1dcda",
+    "resolves_at": [
+      "https://tcieg.org/undermark/um:46c1dcda",
+      "https://itcop.org/undermark/46c1dcda",
+      "https://globalprivacyrights.org/undermark/46c1dcda"
+    ],
+    "registry": "https://globalprivacyrights.org/undermark/"
+  }
+}

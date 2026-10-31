@@ -1,0 +1,8 @@
+# Undermark resolver (generated)
+/undermark /undermark/index.json 200
+/undermark/ /undermark/index.json 200
+/undermark/46c1dcda /undermark/46c1dcda.json 200
+/undermark/um:46c1dcda /undermark/46c1dcda.json 200
+/undermark/78861df115fb835e /undermark/78861df115fb835e.json 200
+/undermark/um:78861df115fb835e /undermark/78861df115fb835e.json 200
+# end undermark resolver

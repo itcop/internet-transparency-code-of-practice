@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "opn": "https://0pn.org/ns/undermark#"
+  },
+  "@type": "opn.undermark/1",
+  "umid": "um:78861df115fb835e",
+  "material_assurance_tier": "L0",
+  "signal_level": "L0-support",
+  "content_hash": "sha256:78861df115fb835e",
+  "resolves_to": {
+    "work": "https://itcop.org/paper/",
+    "licence": "https://creativecommons.org/licenses/by/4.0/",
+    "terms_version_reference": "0pn-mrt-1.0-2026-08-31",
+    "tdm_policy": "https://itcop.org/licence/0pn-mrt-1.0.json",
+    "evidence_request_endpoint": "https://itcop.org/reuse/evidence",
+    "receipt_schema": "ancr-notice-receipt-2.0"
+  },
+  "note": "Level 0 provenance seed. Links this document to its reuse terms and anonymous evidence route. Not a signed cryptographic undermark. Resolves at https://itcop.org/undermark/78861df115fb835e and https://globalprivacyrights.org/undermark/78861df115fb835e.",
+  "resolver": "https://itcop.org/undermark/78861df115fb835e",
+  "work": {
+    "title": "Clean AI Receipts",
+    "url": "https://itcop.org/paper/"
+  },
+  "resolution": {
+    "this_record": "https://itcop.org/undermark/78861df115fb835e",
+    "origin_record": "https://itcop.org/undermark/78861df115fb835e",
+    "resolves_at": [
+      "https://itcop.org/undermark/78861df115fb835e",
+      "https://globalprivacyrights.org/undermark/78861df115fb835e"
+    ],
+    "registry": "https://globalprivacyrights.org/undermark/"
+  }
+}

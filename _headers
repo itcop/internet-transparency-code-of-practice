@@ -13,3 +13,7 @@
 
 /licence/0pn-mrt-1.1.txt
   Content-Type: text/plain; charset=utf-8
+
+/undermark/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
