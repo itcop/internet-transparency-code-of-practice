@@ -7,7 +7,7 @@ import { join, extname, relative, basename, dirname } from "path";
 // not depend on a magic path existing from a previous session.
 const ROOT = process.env.ITCOP_DEPLOY_ROOT ?? "/tmp/mrt-stage/deploy";
 const ACCOUNT = "ed9b6757db93df52c9e2dd2c1606a594";
-const PROJECT = "itcop-org";
+const PROJECT = process.env.PAGES_PROJECT ?? "itcop-org";
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
 if (!TOKEN) throw new Error("no CLOUDFLARE_API_TOKEN");
 const API = "https://api.cloudflare.com/client/v4";
@@ -34,6 +34,7 @@ const files = walk(ROOT);
 const manifest: Record<string, string> = {};
 const assets: { hash: string; base64: string; contentType: string; path: string }[] = [];
 let headersContent: string | null = null;
+let redirectsContent: string | null = null;
 
 for (const f of files) {
   const rel = "/" + relative(ROOT, f).split("/").join("/");
@@ -42,6 +43,7 @@ for (const f of files) {
   const content = readFileSync(f);
   if (atRoot && SPECIAL.has(base)) {
     if (base === "_headers") headersContent = content.toString("utf-8");
+    if (base === "_redirects") redirectsContent = content.toString("utf-8");
     continue;
   }
   const b64 = content.toString("base64");
@@ -100,6 +102,7 @@ const form = new FormData();
 form.append("manifest", JSON.stringify(manifest));
 form.append("branch", "main");
 if (headersContent) form.append("_headers", new Blob([headersContent]), "_headers");
+if (redirectsContent) form.append("_redirects", new Blob([redirectsContent]), "_redirects");
 const dep = await jf(`${API}/accounts/${ACCOUNT}/pages/projects/${PROJECT}/deployments`, {
   method: "POST",
   headers: { Authorization: `Bearer ${TOKEN}` },
