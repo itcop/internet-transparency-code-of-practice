@@ -25,6 +25,12 @@
   box-sizing: border-box;
 }
 
+/* Components below set display: grid or inline-flex, which beats the UA [hidden] rule.
+   Without this, the gateway shows notice, form and receipt at once. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }

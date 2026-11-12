@@ -100,7 +100,7 @@ const i18n = {
         newsletterLabel: "Follow the campaign, send me TCIEG campaign updates.",
         registerLabel: "Register your transparency badge to broadcast the transparency signal.",
         registerNote:
-          "Be the first to test the Internet Transparency Signal by registering to broadcast digital transparency. We will send you an email to verify your entry and your organisation's active legal status, and we will add you to the signaling test waitlist, to activate the badge's online transparency signal.",
+          "Be among the first to test the Internet Transparency Signal. Your organisation joins the signalling test waitlist and its entry is queued for the public 0PN Directory. Nothing is published, validated or activated until the 0PN backend is live.",
         submit: "Continue",
         empty: "Enter an email address to register interest.",
         confirmation: "Your signup is recorded. Your notice receipt is below: keep its ID.",
@@ -275,7 +275,7 @@ const i18n = {
         newsletterLabel: "Suivez la campagne, envoyez-moi les nouvelles de la campagne TCIEG.",
         registerLabel: "Inscrivez votre badge de transparence pour diffuser le signal de transparence.",
         registerNote:
-          "Soyez le premier à tester le signal de transparence Internet en vous inscrivant pour diffuser la transparence numérique. Nous vous enverrons un courriel pour vérifier votre inscription et le statut juridique actif de votre organisation, et nous vous ajouterons à la liste d'attente du test de signalisation, afin d'activer le signal de transparence en ligne du badge.",
+          "Soyez parmi les premiers à tester le signal de transparence Internet. Votre organisation rejoint la liste d'attente du test de signalisation et sa fiche est mise en file pour le répertoire public 0PN. Rien n'est publié, validé ni activé avant la mise en ligne du service 0PN.",
         submit: "Continuer",
         empty: "Saisissez une adresse courriel pour enregistrer votre intérêt.",
         confirmation: "Votre inscription est enregistrée. Votre reçu d'avis est ci-dessous : conservez son identifiant.",
