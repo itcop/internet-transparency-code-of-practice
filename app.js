@@ -55,7 +55,7 @@ const i18n = {
         title: "Trustparency Notice",
         collected: "What is collected: only what you choose to enter.",
         purpose: "Purpose: to demonstrate public support for the Code.",
-        storage: "Where it goes: a Canadian server, under PIPEDA jurisdiction.",
+        storage: "Where it goes: a server in the European Union (Helsinki, Finland), held by TCIEG as controller.",
         receipt: "Notice receipt: a receipt is issued when the backend goes live.",
       },
     },
@@ -71,7 +71,7 @@ const i18n = {
     badge: {
       label: "Blue Register",
       heading: "Sign up for the ITCoP Transparency Signal Badge",
-      provenance: "A project of the Transparency and Consent Interoperability Group (TCIEG).",
+      provenance: "A project of the Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "The ITCoP Transparency Signal Badge is a self-asserted transparency signal to enhance trust, issued from itcop.org. It marks an organisation's willingness to make notice, transparency, and consent inspectable in practice. It is not a certification or a verified seal.",
       bodyTwo:
@@ -82,15 +82,16 @@ const i18n = {
         continue: "Continue",
       },
       notice: {
-        title: "0PN Notice",
+        title: "ITCoP Badge notice",
         intro: "Before you sign up, here is what this collection involves.",
-        controller: "Controller: Global Privacy Rights (did:web:globalprivacyrights.org), the party accountable for this collection.",
+        controller: "Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Authority: UK GDPR and the Data Protection Act 2018; the Information Commissioner's Office (GB). If you are in the EU or the EEA, the EU GDPR also applies.",
         collected: "What is collected: only the email address you enter.",
         purpose: "Purpose: badge signup and support for the ITCoP 2028 campaign for Digital-ID Consent Online.",
-        newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, with TCIEG UK as recipient, until you unsubscribe.",
+        newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, until you unsubscribe.",
         basis: "Lawful basis: your consent, given by submitting this form.",
-        storage: "Where it is stored: a Canadian server, under PIPEDA jurisdiction.",
-        rights: "Your rights: you can withdraw consent or ask to remove your entry at any time, as easily as you gave it, by writing to info@itcop.org.",
+        storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
+        rights: "Your rights: you can withdraw consent or ask to remove your entry at any time, as easily as you gave it, with your receipt ID or by writing to info@tcieg.org.",
         receipt: "Notice receipt: a receipt is issued to you on signup.",
       },
       form: {
@@ -102,8 +103,8 @@ const i18n = {
           "Be the first to test the Internet Transparency Signal by registering to broadcast digital transparency. We will send you an email to verify your entry and your organisation's active legal status, and we will add you to the signaling test waitlist, to activate the badge's online transparency signal.",
         submit: "Continue",
         empty: "Enter an email address to register interest.",
-        confirmation:
-          "Thank you, your request is recorded once the notice receipt backend goes live.",
+        confirmation: "Your signup is recorded. Your notice receipt is below: keep its ID.",
+        unavailable: "The receipt service could not be reached, so nothing was recorded. Please try again later.",
       },
       receipt: {
         heading: "Your notice receipt",
@@ -115,12 +116,20 @@ const i18n = {
         embedCopied: "Embed snippet copied to your clipboard.",
         embedFailed: "Could not copy automatically. Select and copy the snippet manually.",
         disclaimer:
-          "This is a client-side demo receipt for the campaign phase. The anchored, hash-chained notice-event receipt (nel:<hash>, concat-delim-v3) is issued by the backend when it goes live.",
+          "Keep your receipt ID: it is how you show or withdraw this signup. The receipt holds no personal data. TCIEG keeps your email against a hash of this ID, never the ID itself.",
       },
       register: {
         pending: "Your directory entry and Level 1 organisation details are queued.",
         note:
           "Your self-asserted listing and the Level 1 organisation details are added to the public 0PN Directory when the 0PN backend goes live. Nothing is published, validated, or activated yet, this confirms your entry is queued for publication.",
+      },
+      withdraw: {
+        heading: "Withdraw your signup",
+        intro: "Enter your receipt ID. Your email and any organisation details are deleted at once. TCIEG keeps only a hash of the receipt ID and the time of withdrawal, as a record that you withdrew.",
+        label: "Receipt ID",
+        button: "Withdraw",
+        done: "Withdrawn. Your personal data has been deleted.",
+        notHeld: "This receipt is not held, or it was already withdrawn.",
       },
       org: {
         levelTag: "Level 1, for organisations",
@@ -128,12 +137,12 @@ const i18n = {
         notice: {
           title: "0PN Notice, Level 1",
           intro: "Level 1 is the next rung above Level 0. It records a full inspectable controller entry for an organisation.",
-          controller: "Controller: Global Privacy Rights (did:web:globalprivacyrights.org), accountable for this organisation record.",
+          controller: "Controller: TCIEG, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.",
           collected: "What is collected: last name, country, organisation website, privacy contact, and an online access point URL if you have one.",
           purpose: "Purpose: to activate the transparency signal and add it to your badge.",
           validation: "Validation: the organisation's valid legal status is checked against a public registry when the backend is live.",
-          storage: "Where it is stored: a Canadian server, under PIPEDA jurisdiction, until the UK registry node is live.",
-          rights: "Your rights: you can withdraw or ask to remove this organisation record at any time, as easily as you gave it, by writing to info@itcop.org.",
+          storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
+          rights: "Your rights: you can withdraw or ask to remove this organisation record at any time, as easily as you gave it, with your receipt ID or by writing to info@tcieg.org.",
         },
         form: {
           lastNameLabel: "Last name",
@@ -160,7 +169,7 @@ const i18n = {
       loading: "Loading the directory.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, an initiative of the Transparency and Consent Interoperability Group (TCIEG).",
+      accountability: "Internet Transparency Code of Practice, an initiative of the Transparency and Consent Interoperability Expert Group (TCIEG).",
       contactLabel: "Contact: ",
       email: "info@itcop.org",
     },
@@ -221,7 +230,7 @@ const i18n = {
         title: "Avis de Trustparency",
         collected: "Ce qui est recueilli : uniquement ce que vous choisissez d'inscrire.",
         purpose: "Finalité : démontrer l'appui du public au Code.",
-        storage: "Destination : un serveur canadien, sous juridiction de la LPRPDE.",
+        storage: "Destination : un serveur dans l'Union européenne (Helsinki, Finlande), détenu par TCIEG comme responsable du traitement.",
         receipt: "Reçu d'avis : un reçu sera émis lorsque le service sera en ligne.",
       },
     },
@@ -237,7 +246,7 @@ const i18n = {
     badge: {
       label: "Registre bleu",
       heading: "Inscrivez-vous pour le badge de signal de transparence ITCoP",
-      provenance: "Un projet du Transparency and Consent Interoperability Group (TCIEG).",
+      provenance: "Un projet du Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "Le badge de signal de transparence ITCoP est un signal de transparence auto-déclaré pour renforcer la confiance, émis par itcop.org. Il indique qu'une organisation accepte de rendre l'avis, la transparence et le consentement vérifiables dans la pratique. Ce n'est ni une certification ni un sceau vérifié.",
       bodyTwo:
@@ -248,15 +257,16 @@ const i18n = {
         continue: "Continuer",
       },
       notice: {
-        title: "Avis 0PN",
+        title: "Avis du badge ITCoP",
         intro: "Avant votre inscription, voici en quoi consiste cette collecte.",
-        controller: "Responsable du traitement : Global Privacy Rights (did:web:globalprivacyrights.org), la partie responsable de cette collecte.",
+        controller: "Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Autorité : le RGPD du Royaume-Uni et la Data Protection Act 2018 ; l'Information Commissioner's Office (Royaume-Uni). Si vous êtes dans l'UE ou l'EEE, le RGPD de l'UE s'applique aussi.",
         collected: "Ce qui est recueilli : uniquement l'adresse courriel que vous saisissez.",
         purpose: "Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour le consentement à l'identité numérique en ligne.",
-        newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, avec TCIEG UK comme destinataire, jusqu'à votre désabonnement.",
+        newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, jusqu'à votre désabonnement.",
         basis: "Base légale : votre consentement, donné en soumettant ce formulaire.",
-        storage: "Où c'est stocké : un serveur canadien, sous juridiction de la LPRPDE.",
-        rights: "Vos droits : vous pouvez retirer votre consentement ou demander le retrait de votre inscription à tout moment, aussi facilement que vous l'avez donné, en écrivant à info@itcop.org.",
+        storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
+        rights: "Vos droits : vous pouvez retirer votre consentement ou demander le retrait de votre inscription à tout moment, aussi facilement que vous l'avez donné, avec l'identifiant de votre reçu ou en écrivant à info@tcieg.org.",
         receipt: "Reçu d'avis : un reçu vous est émis à l'inscription.",
       },
       form: {
@@ -268,8 +278,8 @@ const i18n = {
           "Soyez le premier à tester le signal de transparence Internet en vous inscrivant pour diffuser la transparence numérique. Nous vous enverrons un courriel pour vérifier votre inscription et le statut juridique actif de votre organisation, et nous vous ajouterons à la liste d'attente du test de signalisation, afin d'activer le signal de transparence en ligne du badge.",
         submit: "Continuer",
         empty: "Saisissez une adresse courriel pour enregistrer votre intérêt.",
-        confirmation:
-          "Merci, votre demande sera enregistrée dès que le service de reçu d'avis sera en ligne.",
+        confirmation: "Votre inscription est enregistrée. Votre reçu d'avis est ci-dessous : conservez son identifiant.",
+        unavailable: "Le service de reçus est injoignable, rien n'a donc été enregistré. Veuillez réessayer plus tard.",
       },
       receipt: {
         heading: "Votre reçu d'avis",
@@ -281,12 +291,20 @@ const i18n = {
         embedCopied: "Le code d'intégration a été copié dans votre presse-papiers.",
         embedFailed: "Copie automatique impossible. Sélectionnez et copiez le code manuellement.",
         disclaimer:
-          "Ceci est un reçu de démonstration côté client pour la phase de campagne. Le reçu d'événement d'avis ancré et chaîné par empreinte (nel:<hash>, concat-delim-v3) est émis par le service lorsqu'il entre en ligne.",
+          "Conservez l'identifiant de votre reçu : il vous permet de présenter ou de retirer cette inscription. Le reçu ne contient aucune donnée personnelle. TCIEG conserve votre courriel avec une empreinte de cet identifiant, jamais l'identifiant lui-même.",
       },
       register: {
         pending: "Votre inscription au répertoire et les détails de l'organisation de niveau 1 sont en file.",
         note:
           "Votre fiche auto-déclarée et les détails de l'organisation de niveau 1 sont ajoutés au répertoire public 0PN lorsque le service 0PN entre en ligne. Rien n'est encore publié, validé ni activé, ceci confirme que votre fiche est mise en file pour publication.",
+      },
+      withdraw: {
+        heading: "Retirer votre inscription",
+        intro: "Saisissez l'identifiant de votre reçu. Votre courriel et les détails de votre organisation sont supprimés immédiatement. TCIEG ne conserve qu'une empreinte de l'identifiant et l'heure du retrait, comme trace de votre retrait.",
+        label: "Identifiant du reçu",
+        button: "Retirer",
+        done: "Retiré. Vos données personnelles ont été supprimées.",
+        notHeld: "Ce reçu n'est pas détenu, ou il a déjà été retiré.",
       },
       org: {
         levelTag: "Niveau 1, pour les organisations",
@@ -294,12 +312,12 @@ const i18n = {
         notice: {
           title: "Avis 0PN, niveau 1",
           intro: "Le niveau 1 est l'échelon suivant après le niveau 0. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.",
-          controller: "Responsable du traitement : Global Privacy Rights (did:web:globalprivacyrights.org), responsable de cette fiche d'organisation.",
+          controller: "Responsable du traitement : TCIEG, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.",
           collected: "Ce qui est recueilli : nom de famille, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.",
           purpose: "Finalité : activer le signal de transparence et l'ajouter à votre badge.",
           validation: "Validation : le statut juridique valide de l'organisation est vérifié auprès d'un registre public lorsque le service est en ligne.",
-          storage: "Où c'est stocké : un serveur canadien, sous juridiction de la LPRPDE, jusqu'à la mise en service du nœud de registre du Royaume-Uni.",
-          rights: "Vos droits : vous pouvez retirer cette fiche d'organisation ou en demander le retrait à tout moment, aussi facilement que vous l'avez donnée, en écrivant à info@itcop.org.",
+          storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
+          rights: "Vos droits : vous pouvez retirer cette fiche d'organisation ou en demander le retrait à tout moment, aussi facilement que vous l'avez donnée, avec l'identifiant de votre reçu ou en écrivant à info@tcieg.org.",
         },
         form: {
           lastNameLabel: "Nom de famille",
@@ -326,15 +344,15 @@ const i18n = {
       loading: "Chargement du répertoire.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, une initiative du Transparency and Consent Interoperability Group (TCIEG).",
+      accountability: "Internet Transparency Code of Practice, une initiative du Transparency and Consent Interoperability Expert Group (TCIEG).",
       contactLabel: "Contact : ",
       email: "info@itcop.org",
     },
   },
 };
 
-// TODO: wire to WHC Montreal box (PIPEDA). No live storage until backend + notice receipt are live.
-const BADGE_ENDPOINT = "/api/badge";
+// TODO: wire to the TCIEG receipt service on the Hetzner server (Helsinki, EU); TCIEG is the controller. No live storage until the backend and the notice receipt are live.
+const BADGE_ENDPOINT = "https://tcieg.org/api/badge";
 
 const getInitialLanguage = () => {
   const params = new URLSearchParams(window.location.search);
@@ -588,32 +606,37 @@ const handleBadgeSubmit = (event, language) => {
       }
     : null;
 
-  const issuedAt = new Date().toISOString();
-  lastReceipt = {
-    type: "itcop-transparency-signal-badge-signup",
-    receipt_id: generateReceiptId(issuedAt),
-    notice_reference: generateNoticeReference(language),
-    issued_at: issuedAt,
-    subject_first_name: firstNameInput ? firstNameInput.value.trim() : "",
-    subject_email: emailInput.value.trim(),
-    newsletter_opt_in: newsletterInput ? newsletterInput.checked : false,
-    register_opt_in: registerOptIn,
-    organisation,
-    language,
-    demo: true,
-    note:
-      "Client-side demo receipt for the campaign phase. The anchored, hash-chained notice-event receipt (nel:<hash>, concat-delim-v3) is issued by the backend when it goes live.",
-  };
-
-  showStatus(status, getValue(language, "badge.form.confirmation"));
-  renderReceipt(language, lastReceipt);
-
-  // Show the queued directory + Level 1 confirmation inside the receipt only
-  // when the register toggle was on. Nothing is published/validated/activated.
-  const registerConfirm = document.querySelector("#receipt-register-confirm");
-  if (registerConfirm) {
-    registerConfirm.hidden = !registerOptIn;
-  }
+  const button = event.target.querySelector("button[type=submit]");
+  if (button) button.disabled = true;
+  fetch(BADGE_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "omit",
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify({
+      email: emailInput.value.trim(),
+      first_name: firstNameInput ? firstNameInput.value.trim() : "",
+      newsletter: newsletterInput ? newsletterInput.checked : false,
+      register: registerOptIn,
+      organisation,
+      language,
+    }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      if (!result || !result.ok) throw new Error((result && result.reason) || "refused");
+      const r = result.receipt;
+      lastReceipt = r;
+      showStatus(status, getValue(language, "badge.form.confirmation"));
+      renderReceipt(language, { receipt_id: r.receipt_id, notice_reference: r.notice_version_reference.notice_version_id + " · " + r.notice_version_hash.slice(0, 12), issued_at: r.presented_at });
+      const registerConfirm = document.querySelector("#receipt-register-confirm");
+      if (registerConfirm) registerConfirm.hidden = !registerOptIn;
+    })
+    .catch((error) => {
+      const reason = error && error.message && error.message !== "refused" && !/fetch|network/i.test(error.message) ? error.message : getValue(language, "badge.form.unavailable");
+      showStatus(status, reason);
+    })
+    .finally(() => { if (button) button.disabled = false; });
 };
 
 // The UK node holds the registrants. The Canada node is the Level 0 sandbox and
@@ -692,6 +715,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const withdrawForm = document.querySelector("#withdraw-form");
+  if (withdrawForm) {
+    withdrawForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const out = document.querySelector("#withdraw-status");
+      const id = (document.querySelector("#withdraw-id") || {}).value || "";
+      fetch(BADGE_ENDPOINT + "/withdraw", { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "omit", referrerPolicy: "no-referrer", body: JSON.stringify({ receipt_id: id.trim() }) })
+        .then((r) => r.json())
+        .then((j) => showStatus(out, getValue(currentLanguage, j && j.ok ? "badge.withdraw.done" : "badge.withdraw.notHeld")))
+        .catch(() => showStatus(out, getValue(currentLanguage, "badge.form.unavailable")));
+    });
+  }
 
   if (badgeForm) {
     badgeForm.dataset.endpoint = BADGE_ENDPOINT;
