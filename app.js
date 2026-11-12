@@ -55,7 +55,7 @@ const i18n = {
         title: "Trustparency Notice",
         collected: "What is collected: only what you choose to enter.",
         purpose: "Purpose: to demonstrate public support for the Code.",
-        storage: "Where it goes: a Canadian server, under PIPEDA jurisdiction.",
+        storage: "Where it goes: a server in the European Union (Helsinki, Finland), held by TCIEG as controller.",
         receipt: "Notice receipt: a receipt is issued when the backend goes live.",
       },
     },
@@ -71,7 +71,7 @@ const i18n = {
     badge: {
       label: "Blue Register",
       heading: "Sign up for the ITCoP Transparency Signal Badge",
-      provenance: "A project of the Transparency and Consent Interoperability Group (TCIEG).",
+      provenance: "A project of the Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "The ITCoP Transparency Signal Badge is a self-asserted transparency signal to enhance trust, issued from itcop.org. It marks an organisation's willingness to make notice, transparency, and consent inspectable in practice. It is not a certification or a verified seal.",
       bodyTwo:
@@ -84,13 +84,14 @@ const i18n = {
       notice: {
         title: "0PN Notice",
         intro: "Before you sign up, here is what this collection involves.",
-        controller: "Controller: Global Privacy Rights (did:web:globalprivacyrights.org), the party accountable for this collection.",
+        controller: "Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Authority: UK GDPR and the Data Protection Act 2018; the Information Commissioner's Office (GB). If you are in the EU or the EEA, the EU GDPR also applies.",
         collected: "What is collected: only the email address you enter.",
         purpose: "Purpose: badge signup and support for the ITCoP 2028 campaign for Digital-ID Consent Online.",
-        newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, with TCIEG UK as recipient, until you unsubscribe.",
+        newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, until you unsubscribe.",
         basis: "Lawful basis: your consent, given by submitting this form.",
-        storage: "Where it is stored: a Canadian server, under PIPEDA jurisdiction.",
-        rights: "Your rights: you can withdraw consent or ask to remove your entry at any time, as easily as you gave it, by writing to info@itcop.org.",
+        storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
+        rights: "Your rights: you can withdraw consent or ask to remove your entry at any time, as easily as you gave it, with your receipt ID or by writing to info@tcieg.org.",
         receipt: "Notice receipt: a receipt is issued to you on signup.",
       },
       form: {
@@ -128,12 +129,12 @@ const i18n = {
         notice: {
           title: "0PN Notice, Level 1",
           intro: "Level 1 is the next rung above Level 0. It records a full inspectable controller entry for an organisation.",
-          controller: "Controller: Global Privacy Rights (did:web:globalprivacyrights.org), accountable for this organisation record.",
+          controller: "Controller: TCIEG, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.",
           collected: "What is collected: last name, country, organisation website, privacy contact, and an online access point URL if you have one.",
           purpose: "Purpose: to activate the transparency signal and add it to your badge.",
           validation: "Validation: the organisation's valid legal status is checked against a public registry when the backend is live.",
-          storage: "Where it is stored: a Canadian server, under PIPEDA jurisdiction, until the UK registry node is live.",
-          rights: "Your rights: you can withdraw or ask to remove this organisation record at any time, as easily as you gave it, by writing to info@itcop.org.",
+          storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
+          rights: "Your rights: you can withdraw or ask to remove this organisation record at any time, as easily as you gave it, with your receipt ID or by writing to info@tcieg.org.",
         },
         form: {
           lastNameLabel: "Last name",
@@ -160,7 +161,7 @@ const i18n = {
       loading: "Loading the directory.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, an initiative of the Transparency and Consent Interoperability Group (TCIEG).",
+      accountability: "Internet Transparency Code of Practice, an initiative of the Transparency and Consent Interoperability Expert Group (TCIEG).",
       contactLabel: "Contact: ",
       email: "info@itcop.org",
     },
@@ -221,7 +222,7 @@ const i18n = {
         title: "Avis de Trustparency",
         collected: "Ce qui est recueilli : uniquement ce que vous choisissez d'inscrire.",
         purpose: "Finalité : démontrer l'appui du public au Code.",
-        storage: "Destination : un serveur canadien, sous juridiction de la LPRPDE.",
+        storage: "Destination : un serveur dans l'Union européenne (Helsinki, Finlande), détenu par TCIEG comme responsable du traitement.",
         receipt: "Reçu d'avis : un reçu sera émis lorsque le service sera en ligne.",
       },
     },
@@ -237,7 +238,7 @@ const i18n = {
     badge: {
       label: "Registre bleu",
       heading: "Inscrivez-vous pour le badge de signal de transparence ITCoP",
-      provenance: "Un projet du Transparency and Consent Interoperability Group (TCIEG).",
+      provenance: "Un projet du Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "Le badge de signal de transparence ITCoP est un signal de transparence auto-déclaré pour renforcer la confiance, émis par itcop.org. Il indique qu'une organisation accepte de rendre l'avis, la transparence et le consentement vérifiables dans la pratique. Ce n'est ni une certification ni un sceau vérifié.",
       bodyTwo:
@@ -250,13 +251,14 @@ const i18n = {
       notice: {
         title: "Avis 0PN",
         intro: "Avant votre inscription, voici en quoi consiste cette collecte.",
-        controller: "Responsable du traitement : Global Privacy Rights (did:web:globalprivacyrights.org), la partie responsable de cette collecte.",
+        controller: "Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Autorité : le RGPD du Royaume-Uni et la Data Protection Act 2018 ; l'Information Commissioner's Office (Royaume-Uni). Si vous êtes dans l'UE ou l'EEE, le RGPD de l'UE s'applique aussi.",
         collected: "Ce qui est recueilli : uniquement l'adresse courriel que vous saisissez.",
         purpose: "Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour le consentement à l'identité numérique en ligne.",
-        newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, avec TCIEG UK comme destinataire, jusqu'à votre désabonnement.",
+        newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, jusqu'à votre désabonnement.",
         basis: "Base légale : votre consentement, donné en soumettant ce formulaire.",
-        storage: "Où c'est stocké : un serveur canadien, sous juridiction de la LPRPDE.",
-        rights: "Vos droits : vous pouvez retirer votre consentement ou demander le retrait de votre inscription à tout moment, aussi facilement que vous l'avez donné, en écrivant à info@itcop.org.",
+        storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
+        rights: "Vos droits : vous pouvez retirer votre consentement ou demander le retrait de votre inscription à tout moment, aussi facilement que vous l'avez donné, avec l'identifiant de votre reçu ou en écrivant à info@tcieg.org.",
         receipt: "Reçu d'avis : un reçu vous est émis à l'inscription.",
       },
       form: {
@@ -294,12 +296,12 @@ const i18n = {
         notice: {
           title: "Avis 0PN, niveau 1",
           intro: "Le niveau 1 est l'échelon suivant après le niveau 0. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.",
-          controller: "Responsable du traitement : Global Privacy Rights (did:web:globalprivacyrights.org), responsable de cette fiche d'organisation.",
+          controller: "Responsable du traitement : TCIEG, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.",
           collected: "Ce qui est recueilli : nom de famille, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.",
           purpose: "Finalité : activer le signal de transparence et l'ajouter à votre badge.",
           validation: "Validation : le statut juridique valide de l'organisation est vérifié auprès d'un registre public lorsque le service est en ligne.",
-          storage: "Où c'est stocké : un serveur canadien, sous juridiction de la LPRPDE, jusqu'à la mise en service du nœud de registre du Royaume-Uni.",
-          rights: "Vos droits : vous pouvez retirer cette fiche d'organisation ou en demander le retrait à tout moment, aussi facilement que vous l'avez donnée, en écrivant à info@itcop.org.",
+          storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
+          rights: "Vos droits : vous pouvez retirer cette fiche d'organisation ou en demander le retrait à tout moment, aussi facilement que vous l'avez donnée, avec l'identifiant de votre reçu ou en écrivant à info@tcieg.org.",
         },
         form: {
           lastNameLabel: "Nom de famille",
@@ -326,14 +328,14 @@ const i18n = {
       loading: "Chargement du répertoire.",
     },
     footer: {
-      accountability: "Internet Transparency Code of Practice, une initiative du Transparency and Consent Interoperability Group (TCIEG).",
+      accountability: "Internet Transparency Code of Practice, une initiative du Transparency and Consent Interoperability Expert Group (TCIEG).",
       contactLabel: "Contact : ",
       email: "info@itcop.org",
     },
   },
 };
 
-// TODO: wire to WHC Montreal box (PIPEDA). No live storage until backend + notice receipt are live.
+// TODO: wire to the TCIEG receipt service on the Hetzner server (Helsinki, EU); TCIEG is the controller. No live storage until the backend and the notice receipt are live.
 const BADGE_ENDPOINT = "/api/badge";
 
 const getInitialLanguage = () => {
