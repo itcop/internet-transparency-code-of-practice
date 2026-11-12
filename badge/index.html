@@ -168,6 +168,19 @@
           </div>
         </div>
       </section>
+      <section class="story-section" id="withdraw">
+        <div class="shell section-grid">
+          <div class="section-heading"><h2 data-i18n="badge.withdraw.heading"></h2></div>
+          <div class="section-copy">
+            <p data-i18n="badge.withdraw.intro"></p>
+            <form class="support-form" id="withdraw-form" novalidate>
+              <div class="field"><label for="withdraw-id" data-i18n="badge.withdraw.label"></label><input type="text" id="withdraw-id" name="receipt_id" autocomplete="off" placeholder="rcpt:itcop.org:..." /></div>
+              <button type="submit" class="button" data-i18n="badge.withdraw.button"></button>
+              <p class="form-status" id="withdraw-status" hidden aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
