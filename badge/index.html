@@ -47,38 +47,85 @@
         <div class="shell badge-layout">
           <div class="badge-copy">
             <p class="section-label" data-i18n="badge.label"></p>
-            <h2 data-i18n="badge.heading"></h2>
+            <h1 class="badge-title" data-i18n="badge.heading"></h1>
             <p class="badge-provenance" data-i18n="badge.provenance"></p>
+            <figure class="badge-showcase">
+              <img src="/assets/0pn-badge-ondark.svg" data-i18n-alt="badge.imageAlt" alt="" width="120" height="120" />
+              <figcaption data-i18n="badge.showcaseCaption"></figcaption>
+            </figure>
             <p data-i18n="badge.bodyOne"></p>
             <p data-i18n="badge.bodyTwo"></p>
           </div>
           <div class="badge-panel">
-            <img
-              src="/assets/step-empty.svg"
-              id="badge-hero-icon"
-              class="badge-step-icon badge-hero-icon"
-              alt=""
-              width="72"
-              height="72"
-            />
             <p class="badge-gateway-title" data-i18n="badge.gateway.title"></p>
-            <div class="badge-notice" id="badge-notice" role="note">
-              <p class="badge-notice-title" data-i18n="badge.notice.title"></p>
-              <p class="badge-notice-intro" data-i18n="badge.notice.intro"></p>
-              <ul class="badge-notice-list">
-                <li data-i18n="badge.notice.controller"></li>
-                <li data-i18n="badge.notice.authority"></li>
-                <li data-i18n="badge.notice.collected"></li>
-                <li data-i18n="badge.notice.purpose"></li>
-                <li data-i18n="badge.notice.newsletter"></li>
-                <li data-i18n="badge.notice.basis"></li>
-                <li data-i18n="badge.notice.storage"></li>
-                <li data-i18n="badge.notice.rights"></li>
-                <li data-i18n="badge.notice.receipt"></li>
-              </ul>
+            <ol class="badge-stepper" id="badge-stepper">
+              <li data-step="1" aria-current="step"><span class="badge-stepper-dot" aria-hidden="true">1</span><span data-i18n="badge.steps.notice"></span></li>
+              <li data-step="2"><span class="badge-stepper-dot" aria-hidden="true">2</span><span data-i18n="badge.steps.details"></span></li>
+              <li data-step="3"><span class="badge-stepper-dot" aria-hidden="true">3</span><span data-i18n="badge.steps.receipt"></span></li>
+            </ol>
+
+            <!-- STEP 1: choose a path, read the notice -->
+            <div class="badge-step" id="badge-step-1">
+              <fieldset class="badge-paths">
+                <legend data-i18n="badge.paths.legend"></legend>
+                <label class="badge-path">
+                  <input type="radio" name="badge-path" value="support" checked />
+                  <span class="badge-path-title" data-i18n="badge.paths.support.title"></span>
+                  <span class="badge-path-desc" data-i18n="badge.paths.support.desc"></span>
+                </label>
+                <label class="badge-path">
+                  <input type="radio" name="badge-path" value="org" />
+                  <span class="badge-path-title" data-i18n="badge.paths.org.title"></span>
+                  <span class="badge-path-desc" data-i18n="badge.paths.org.desc"></span>
+                </label>
+              </fieldset>
+
+              <div class="badge-notice" id="badge-notice" role="note">
+                <p class="badge-notice-title" data-i18n="badge.notice.title"></p>
+                <dl class="badge-summary">
+                  <div><dt data-i18n="badge.summary.whoLabel"></dt><dd data-i18n="badge.summary.who"></dd></div>
+                  <div><dt data-i18n="badge.summary.whatLabel"></dt><dd data-i18n="badge.summary.what"></dd></div>
+                  <div><dt data-i18n="badge.summary.whyLabel"></dt><dd data-i18n="badge.summary.why"></dd></div>
+                  <div><dt data-i18n="badge.summary.whereLabel"></dt><dd data-i18n="badge.summary.where"></dd></div>
+                  <div><dt data-i18n="badge.summary.withdrawLabel"></dt><dd data-i18n="badge.summary.withdraw"></dd></div>
+                </dl>
+                <details class="badge-full-notice">
+                  <summary data-i18n="badge.summary.readFull"></summary>
+                  <p class="badge-notice-intro" data-i18n="badge.notice.intro"></p>
+                  <ul class="badge-notice-list">
+                    <li data-i18n="badge.notice.controller"></li>
+                    <li data-i18n="badge.notice.authority"></li>
+                    <li data-i18n="badge.notice.collected"></li>
+                    <li data-i18n="badge.notice.purpose"></li>
+                    <li data-i18n="badge.notice.newsletter"></li>
+                    <li data-i18n="badge.notice.basis"></li>
+                    <li data-i18n="badge.notice.storage"></li>
+                    <li data-i18n="badge.notice.rights"></li>
+                    <li data-i18n="badge.notice.receipt"></li>
+                  </ul>
+                  <p class="badge-notice-links"><a href="/badge/notice.txt" data-i18n="badge.summary.published"></a> · <a href="https://tcieg.org/.well-known/transparency/cir.json" data-i18n="badge.summary.cir"></a></p>
+                </details>
+              </div>
+
+              <div class="badge-notice badge-org-notice" id="badge-org-notice" role="note" hidden>
+                <p class="badge-handover" data-i18n="badge.paths.handover"></p>
+                <p class="badge-notice-title" data-i18n="badge.org.notice.title"></p>
+                <p class="badge-notice-intro" data-i18n="badge.org.notice.intro"></p>
+                <ul class="badge-notice-list">
+                  <li data-i18n="badge.org.notice.controller"></li>
+                  <li data-i18n="badge.org.notice.collected"></li>
+                  <li data-i18n="badge.org.notice.purpose"></li>
+                  <li data-i18n="badge.org.notice.validation"></li>
+                  <li data-i18n="badge.org.notice.storage"></li>
+                  <li data-i18n="badge.org.notice.rights"></li>
+                </ul>
+              </div>
+
+              <button type="button" class="button button-light" id="badge-continue" data-i18n="badge.gateway.continue"></button>
             </div>
-            <button type="button" class="button button-light" id="badge-continue" data-i18n="badge.gateway.continue"></button>
-            <form class="support-form badge-form" id="badge-form" novalidate hidden>
+
+            <!-- STEP 2: details -->
+            <form class="support-form badge-form badge-step" id="badge-form" novalidate hidden>
               <div class="field">
                 <label for="badge-email" data-i18n="badge.form.emailLabel"></label>
                 <input type="email" id="badge-email" name="email" autocomplete="email" />
@@ -88,29 +135,11 @@
                 <span class="badge-toggle-track" aria-hidden="true"><span class="badge-toggle-thumb"></span></span>
                 <span class="badge-toggle-label" data-i18n="badge.form.newsletterLabel"></span>
               </label>
-              <label class="badge-toggle" for="badge-register-toggle">
-                <input type="checkbox" id="badge-register-toggle" name="register" class="badge-toggle-input" aria-controls="badge-org-fields" aria-expanded="false" />
-                <span class="badge-toggle-track" aria-hidden="true"><span class="badge-toggle-thumb"></span></span>
-                <span class="badge-toggle-label" data-i18n="badge.form.registerLabel"></span>
-              </label>
-              <p class="badge-register-inline-note" data-i18n="badge.form.registerNote"></p>
               <div class="badge-org-fields" id="badge-org-fields" hidden>
                 <p class="badge-org-level" data-i18n="badge.org.levelTag"></p>
-                <p class="badge-org-fields-intro" data-i18n="badge.org.notice.intro"></p>
-                <div class="badge-notice badge-org-notice" role="note">
-                  <p class="badge-notice-title" data-i18n="badge.org.notice.title"></p>
-                  <ul class="badge-notice-list">
-                    <li data-i18n="badge.org.notice.controller"></li>
-                    <li data-i18n="badge.org.notice.collected"></li>
-                    <li data-i18n="badge.org.notice.purpose"></li>
-                    <li data-i18n="badge.org.notice.validation"></li>
-                    <li data-i18n="badge.org.notice.storage"></li>
-                    <li data-i18n="badge.org.notice.rights"></li>
-                  </ul>
-                </div>
                 <div class="field">
-                  <label for="org-last-name" data-i18n="badge.org.form.lastNameLabel"></label>
-                  <input type="text" id="org-last-name" name="lastName" autocomplete="family-name" />
+                  <label for="org-name" data-i18n="badge.org.form.orgNameLabel"></label>
+                  <input type="text" id="org-name" name="organisationName" autocomplete="organization" />
                 </div>
                 <div class="field">
                   <label for="org-country" data-i18n="badge.org.form.countryLabel"></label>
@@ -128,14 +157,19 @@
                   <label for="org-access-point" data-i18n="badge.org.form.accessPointLabel"></label>
                   <input type="url" id="org-access-point" name="accessPoint" inputmode="url" placeholder="https://" />
                 </div>
-                <p class="badge-register-inline-note" data-i18n="badge.org.pending.note"></p>
+                <p class="badge-register-inline-note" data-i18n="badge.form.registerNote"></p>
               </div>
-              <button type="submit" class="button button-light" data-i18n="badge.form.submit"></button>
+              <div class="badge-step-actions">
+                <button type="button" class="badge-back" id="badge-back" data-i18n="badge.gateway.back"></button>
+                <button type="submit" class="button button-light" id="badge-submit" data-i18n="badge.form.submit"></button>
+              </div>
               <p class="form-status form-status-light" id="badge-status" hidden aria-live="polite"></p>
             </form>
-            <div class="badge-receipt" id="badge-receipt" hidden aria-live="polite">
+
+            <!-- STEP 3: receipt -->
+            <div class="badge-receipt badge-step" id="badge-receipt" hidden aria-live="polite">
               <img src="/assets/0pn-badge-ondark.svg" class="badge-receipt-mark" data-i18n-alt="badge.imageAlt" alt="" width="96" height="96" />
-              <h3 class="badge-receipt-heading" data-i18n="badge.receipt.heading"></h3>
+              <h2 class="badge-receipt-heading" data-i18n="badge.receipt.heading"></h2>
               <dl class="badge-receipt-fields">
                 <div class="badge-receipt-row">
                   <dt data-i18n="badge.receipt.idLabel"></dt>

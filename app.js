@@ -69,17 +69,41 @@ const i18n = {
       cta: "Read the report",
     },
     badge: {
-      label: "Blue Register",
+      label: "Transparency Signal Badge",
       heading: "Sign up for the ITCoP Transparency Signal Badge",
+      showcaseCaption: "Self-asserted. Not a certification or a verified seal.",
+      steps: { notice: "Notice", details: "Your details", receipt: "Your receipt" },
+      paths: {
+        legend: "What would you like to do?",
+        support: { title: "Support the campaign", desc: "Your email address only. You receive a notice receipt and the badge." },
+        org: { title: "Register your organisation", desc: "Also queue your organisation for the 0PN Directory. Nothing is published yet." },
+        handover: "Second notice. This part covers your organisation record, which passes to the 0PN Registry, operated by Open Consent Group Ltd, when listings open.",
+      },
+      summary: {
+        whoLabel: "Who",
+        who: "TCIEG, the Transparency and Consent Interoperability Expert Group",
+        whatLabel: "What is collected",
+        what: "Your email address only",
+        whyLabel: "Why",
+        why: "Badge signup and campaign support. Campaign updates only if you turn them on.",
+        whereLabel: "Where it is stored",
+        where: "A server in the European Union (Helsinki, Finland)",
+        withdrawLabel: "Withdraw",
+        withdraw: "Any time, as easily as you gave it, with your receipt ID or at info@tcieg.org",
+        readFull: "Read the full notice",
+        published: "Published notice",
+        cir: "Controller Identification Record",
+      },
       provenance: "A project of the Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "The ITCoP Transparency Signal Badge is a self-asserted transparency signal to enhance trust, issued from itcop.org. It marks an organisation's willingness to make notice, transparency, and consent inspectable in practice. It is not a certification or a verified seal.",
       bodyTwo:
-        "Signing up supports the campaign for Digital-ID Consent Online. You will be among the first to receive the ITCoP Transparency Signal Badge once notice receipts are live.",
+        "Signing up supports the campaign for a Digital Transparency Charter. You will be among the first to receive the ITCoP Transparency Signal Badge once notice receipts are live.",
       imageAlt: "ITCoP Transparency Signal Badge, an open navy ring with a green public-notice chevron and a white node",
       gateway: {
         title: "Transparency Gateway for Consent Online",
-        continue: "Continue",
+        continue: "Agree and continue",
+        back: "Back",
       },
       notice: {
         title: "ITCoP Badge notice",
@@ -87,7 +111,7 @@ const i18n = {
         controller: "Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.",
         authority: "Authority: UK GDPR and the Data Protection Act 2018; the Information Commissioner's Office (GB). If you are in the EU or the EEA, the EU GDPR also applies.",
         collected: "What is collected: only the email address you enter.",
-        purpose: "Purpose: badge signup and support for the ITCoP 2028 campaign for Digital-ID Consent Online.",
+        purpose: "Purpose: badge signup and support for the ITCoP 2028 campaign for a Digital Transparency Charter.",
         newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, until you unsubscribe.",
         basis: "Lawful basis: your consent, given by submitting this form.",
         storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
@@ -101,7 +125,8 @@ const i18n = {
         registerLabel: "Register your transparency badge to broadcast the transparency signal.",
         registerNote:
           "Be among the first to test the Internet Transparency Signal. Your organisation joins the signalling test waitlist and its entry is queued for the public 0PN Directory. Nothing is published, validated or activated until the 0PN backend is live.",
-        submit: "Continue",
+        submit: "Get my receipt",
+        submitOrg: "Register my organisation",
         empty: "Enter an email address to register interest.",
         confirmation: "Your signup is recorded. Your notice receipt is below: keep its ID.",
         unavailable: "The receipt service could not be reached, so nothing was recorded. Please try again later.",
@@ -132,26 +157,26 @@ const i18n = {
         notHeld: "This receipt is not held, or it was already withdrawn.",
       },
       org: {
-        levelTag: "Level 1, for organisations",
+        levelTag: "Level 1, 0PN Public Registered",
         title: "Register your organisation",
         notice: {
-          title: "0PN Notice, Level 1",
-          intro: "Level 1 is the next rung above Level 0. It records a full inspectable controller entry for an organisation.",
+          title: "0PN Notice, Level 1: 0PN Public Registered",
+          intro: "Level 1, 0PN Public Registered, is the next rung above Level 0, 0PN Public. It records a full inspectable controller entry for an organisation.",
           controller: "Controller: TCIEG, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.",
-          collected: "What is collected: last name, country, organisation website, privacy contact, and an online access point URL if you have one.",
+          collected: "What is collected: organisation name, country, organisation website, privacy contact, and an online access point URL if you have one.",
           purpose: "Purpose: to activate the transparency signal and add it to your badge.",
           validation: "Validation: the organisation's valid legal status is checked against a public registry when the backend is live.",
           storage: "Where it is stored: a server in the European Union (Helsinki, Finland).",
           rights: "Your rights: you can withdraw or ask to remove this organisation record at any time, as easily as you gave it, with your receipt ID or by writing to info@tcieg.org.",
         },
         form: {
-          lastNameLabel: "Last name",
+          orgNameLabel: "Organisation name",
           countryLabel: "Country",
           websiteLabel: "Organisation website",
           privacyContactLabel: "Privacy contact",
           accessPointLabel: "Online access point URL (optional)",
           submit: "Validate your information and check the organisation's valid legal status",
-          empty: "Enter your last name, country, and organisation website to continue.",
+          empty: "Enter your organisation name, country, and organisation website to continue.",
         },
         pending: {
           title: "Validation pending.",
@@ -244,17 +269,41 @@ const i18n = {
       cta: "Lire le rapport",
     },
     badge: {
-      label: "Registre bleu",
+      label: "Badge de signal de transparence",
       heading: "Inscrivez-vous pour le badge de signal de transparence ITCoP",
+      showcaseCaption: "Auto-déclaré. Ni une certification ni un sceau vérifié.",
+      steps: { notice: "Avis", details: "Vos coordonnées", receipt: "Votre reçu" },
+      paths: {
+        legend: "Que souhaitez-vous faire ?",
+        support: { title: "Soutenir la campagne", desc: "Votre adresse courriel seulement. Vous recevez un reçu d'avis et le badge." },
+        org: { title: "Inscrire votre organisation", desc: "Mettez aussi votre organisation en file pour le répertoire 0PN. Rien n'est encore publié." },
+        handover: "Deuxième avis. Cette partie porte sur la fiche de votre organisation, transmise au registre 0PN, exploité par Open Consent Group Ltd, à l'ouverture des inscriptions.",
+      },
+      summary: {
+        whoLabel: "Qui",
+        who: "TCIEG, le Transparency and Consent Interoperability Expert Group",
+        whatLabel: "Ce qui est recueilli",
+        what: "Votre adresse courriel seulement",
+        whyLabel: "Pourquoi",
+        why: "L'inscription au badge et le soutien à la campagne. Les nouvelles de la campagne seulement si vous les activez.",
+        whereLabel: "Où c'est stocké",
+        where: "Un serveur dans l'Union européenne (Helsinki, Finlande)",
+        withdrawLabel: "Retrait",
+        withdraw: "À tout moment, aussi facilement que vous l'avez donné, avec l'identifiant de votre reçu ou à info@tcieg.org",
+        readFull: "Lire l'avis complet",
+        published: "Avis publié",
+        cir: "Fiche d'identification du responsable",
+      },
       provenance: "Un projet du Transparency and Consent Interoperability Expert Group (TCIEG).",
       bodyOne:
         "Le badge de signal de transparence ITCoP est un signal de transparence auto-déclaré pour renforcer la confiance, émis par itcop.org. Il indique qu'une organisation accepte de rendre l'avis, la transparence et le consentement vérifiables dans la pratique. Ce n'est ni une certification ni un sceau vérifié.",
       bodyTwo:
-        "Votre inscription soutient la campagne pour le consentement à l'identité numérique en ligne. Vous serez parmi les premiers à recevoir le badge de signal de transparence ITCoP dès que les reçus d'avis seront en service.",
+        "Votre inscription soutient la campagne pour une charte de la transparence numérique. Vous serez parmi les premiers à recevoir le badge de signal de transparence ITCoP dès que les reçus d'avis seront en service.",
       imageAlt: "Badge de signal de transparence ITCoP, un anneau ouvert bleu marine avec un chevron d'avis public vert et un nœud blanc",
       gateway: {
         title: "Passerelle de transparence pour le consentement en ligne",
-        continue: "Continuer",
+        continue: "Accepter et continuer",
+        back: "Retour",
       },
       notice: {
         title: "Avis du badge ITCoP",
@@ -262,7 +311,7 @@ const i18n = {
         controller: "Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.",
         authority: "Autorité : le RGPD du Royaume-Uni et la Data Protection Act 2018 ; l'Information Commissioner's Office (Royaume-Uni). Si vous êtes dans l'UE ou l'EEE, le RGPD de l'UE s'applique aussi.",
         collected: "Ce qui est recueilli : uniquement l'adresse courriel que vous saisissez.",
-        purpose: "Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour le consentement à l'identité numérique en ligne.",
+        purpose: "Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour une charte de la transparence numérique.",
         newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, jusqu'à votre désabonnement.",
         basis: "Base légale : votre consentement, donné en soumettant ce formulaire.",
         storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
@@ -276,7 +325,8 @@ const i18n = {
         registerLabel: "Inscrivez votre badge de transparence pour diffuser le signal de transparence.",
         registerNote:
           "Soyez parmi les premiers à tester le signal de transparence Internet. Votre organisation rejoint la liste d'attente du test de signalisation et sa fiche est mise en file pour le répertoire public 0PN. Rien n'est publié, validé ni activé avant la mise en ligne du service 0PN.",
-        submit: "Continuer",
+        submit: "Obtenir mon reçu",
+        submitOrg: "Inscrire mon organisation",
         empty: "Saisissez une adresse courriel pour enregistrer votre intérêt.",
         confirmation: "Votre inscription est enregistrée. Votre reçu d'avis est ci-dessous : conservez son identifiant.",
         unavailable: "Le service de reçus est injoignable, rien n'a donc été enregistré. Veuillez réessayer plus tard.",
@@ -307,26 +357,26 @@ const i18n = {
         notHeld: "Ce reçu n'est pas détenu, ou il a déjà été retiré.",
       },
       org: {
-        levelTag: "Niveau 1, pour les organisations",
+        levelTag: "Niveau 1, 0PN Public Registered",
         title: "Inscrire votre organisation",
         notice: {
-          title: "Avis 0PN, niveau 1",
-          intro: "Le niveau 1 est l'échelon suivant après le niveau 0. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.",
+          title: "Avis 0PN, niveau 1 : 0PN Public Registered",
+          intro: "Le niveau 1, 0PN Public Registered, est l'échelon suivant après le niveau 0, 0PN Public. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.",
           controller: "Responsable du traitement : TCIEG, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.",
-          collected: "Ce qui est recueilli : nom de famille, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.",
+          collected: "Ce qui est recueilli : nom de l'organisation, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.",
           purpose: "Finalité : activer le signal de transparence et l'ajouter à votre badge.",
           validation: "Validation : le statut juridique valide de l'organisation est vérifié auprès d'un registre public lorsque le service est en ligne.",
           storage: "Où c'est stocké : un serveur dans l'Union européenne (Helsinki, Finlande).",
           rights: "Vos droits : vous pouvez retirer cette fiche d'organisation ou en demander le retrait à tout moment, aussi facilement que vous l'avez donnée, avec l'identifiant de votre reçu ou en écrivant à info@tcieg.org.",
         },
         form: {
-          lastNameLabel: "Nom de famille",
+          orgNameLabel: "Nom de l'organisation",
           countryLabel: "Pays",
           websiteLabel: "Site Web de l'organisation",
           privacyContactLabel: "Contact vie privée",
           accessPointLabel: "URL du point d'accès en ligne (optionnel)",
           submit: "Validez vos renseignements et vérifiez le statut juridique valide de l'organisation",
-          empty: "Saisissez votre nom de famille, votre pays et le site Web de l'organisation pour continuer.",
+          empty: "Saisissez le nom de l'organisation, votre pays et le site Web de l'organisation pour continuer.",
         },
         pending: {
           title: "Validation en attente.",
@@ -568,6 +618,40 @@ const renderReceipt = (language, receipt) => {
   if (badgeForm) badgeForm.hidden = true;
   const heroIcon = document.querySelector("#badge-hero-icon");
   if (heroIcon) heroIcon.src = "/assets/activated-icon.png";
+  setStepper(3);
+};
+
+// --- Gateway steps (badge/index.html) --------------------------------------
+// One step visible at a time. The stepper marks the current step with
+// aria-current="step" and completed steps with data-done. Pages without a
+// stepper (the home page's older panel) are unaffected.
+const setStepper = (step) => {
+  document.querySelectorAll("#badge-stepper li").forEach((item) => {
+    const n = Number(item.dataset.step);
+    if (n === step) item.setAttribute("aria-current", "step");
+    else item.removeAttribute("aria-current");
+    item.toggleAttribute("data-done", n < step);
+  });
+};
+
+// "support" or "org". The org path is the only way the register flag is set
+// on the redesigned page; the home page still uses its toggle.
+const selectedPath = () => {
+  const checked = document.querySelector('input[name="badge-path"]:checked');
+  return checked ? checked.value : null;
+};
+
+const applyPath = (language) => {
+  const isOrg = selectedPath() === "org";
+  const orgNotice = document.querySelector("#badge-org-notice");
+  const orgFields = document.querySelector("#badge-org-fields");
+  const submit = document.querySelector("#badge-submit");
+  if (orgNotice) orgNotice.hidden = !isOrg;
+  if (orgFields && selectedPath()) orgFields.hidden = !isOrg;
+  if (submit) {
+    submit.dataset.i18n = isOrg ? "badge.form.submitOrg" : "badge.form.submit";
+    submit.textContent = getValue(language, submit.dataset.i18n);
+  }
 };
 
 const handleBadgeSubmit = (event, language) => {
@@ -587,7 +671,8 @@ const handleBadgeSubmit = (event, language) => {
     return;
   }
 
-  const registerOptIn = registerInput ? registerInput.checked : false;
+  const path = selectedPath();
+  const registerOptIn = path ? path === "org" : registerInput ? registerInput.checked : false;
 
   // If the register toggle is on, capture the Level 1 organisation details
   // through this same form submit. No client-side validation/activation is
@@ -598,7 +683,7 @@ const handleBadgeSubmit = (event, language) => {
   };
   const organisation = registerOptIn
     ? {
-        last_name: orgFieldValue("#org-last-name"),
+        organisation_name: orgFieldValue("#org-name"),
         country: orgFieldValue("#org-country"),
         website: orgFieldValue("#org-website"),
         privacy_contact: orgFieldValue("#org-privacy-contact"),
@@ -739,18 +824,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const badgeContinue = document.querySelector("#badge-continue");
   if (badgeContinue && badgeForm) {
     badgeContinue.addEventListener("click", () => {
-      badgeContinue.hidden = true;
-      const badgeNotice = document.querySelector("#badge-notice");
-      if (badgeNotice) badgeNotice.hidden = true;
+      const stepOne = document.querySelector("#badge-step-1");
+      if (stepOne) {
+        stepOne.hidden = true;
+      } else {
+        badgeContinue.hidden = true;
+        const badgeNotice = document.querySelector("#badge-notice");
+        if (badgeNotice) badgeNotice.hidden = true;
+      }
       const heroIcon = document.querySelector("#badge-hero-icon");
       if (heroIcon) heroIcon.src = "/assets/grey-check.png";
       badgeForm.hidden = false;
+      setStepper(2);
       const emailInput = badgeForm.querySelector("#badge-email");
       if (emailInput) {
         emailInput.focus();
       }
     });
   }
+
+  const badgeBack = document.querySelector("#badge-back");
+  if (badgeBack && badgeForm) {
+    badgeBack.addEventListener("click", () => {
+      badgeForm.hidden = true;
+      const stepOne = document.querySelector("#badge-step-1");
+      if (stepOne) stepOne.hidden = false;
+      setStepper(1);
+      if (badgeContinue) badgeContinue.focus();
+    });
+  }
+
+  document.querySelectorAll('input[name="badge-path"]').forEach((radio) => {
+    radio.addEventListener("change", () => applyPath(currentLanguage));
+  });
+  applyPath(currentLanguage);
 
   // Register toggle: reveal/hide the inline Level 1 organisation fields inside
   // the step-2 form. Fields are only captured on submit when this is on.
