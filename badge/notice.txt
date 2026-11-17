@@ -1,5 +1,5 @@
 notice_id: https://itcop.org/badge/
-notice_version_id: 2026-11-13
+notice_version_id: 2026-11-16
 controller: TCIEG (Transparency and Consent Interoperability Expert Group)
 controller_identification_record: https://tcieg.org/.well-known/transparency/cir.json
 lawful_basis: consent
@@ -8,8 +8,8 @@ lawful_basis: consent
 
 ITCoP Badge notice
 Before you sign up, here is what this collection involves.
-Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.
-Authority: UK GDPR and the Data Protection Act 2018; the Information Commissioner's Office (GB). If you are in the EU or the EEA, the EU GDPR also applies.
+Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, a Florida limited liability company, document number L26000502069). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.
+Authority: TCIEG US is established in the United States. If you are in the EU, the EEA or the UK, the EU GDPR or the UK GDPR applies (Article 3(2)) and you can complain to your data protection authority. An Article 27 representative is not yet appointed.
 What is collected: only the email address you enter.
 Purpose: badge signup and support for the ITCoP 2028 campaign for a Digital Transparency Charter.
 If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, until you unsubscribe.
@@ -20,7 +20,7 @@ Notice receipt: a receipt is issued to you on signup.
 
 0PN Notice, Level 1: 0PN Public Registered
 Level 1, 0PN Public Registered, is the next rung above Level 0, 0PN Public. It records a full inspectable controller entry for an organisation.
-Controller: TCIEG, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.
+Controller: TCIEG, operated by TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, Florida). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.
 What is collected: organisation name, country, organisation website, privacy contact, and an online access point URL if you have one.
 Purpose: to activate the transparency signal and add it to your badge.
 Validation: the organisation's valid legal status is checked against a public registry when the backend is live.
@@ -31,8 +31,8 @@ Your rights: you can withdraw or ask to remove this organisation record at any t
 
 Avis du badge ITCoP
 Avant votre inscription, voici en quoi consiste cette collecte.
-Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.
-Autorité : le RGPD du Royaume-Uni et la Data Protection Act 2018 ; l'Information Commissioner's Office (Royaume-Uni). Si vous êtes dans l'UE ou l'EEE, le RGPD de l'UE s'applique aussi.
+Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, société à responsabilité limitée de Floride, numéro de document L26000502069). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.
+Autorité : TCIEG US est établi aux États-Unis. Si vous êtes dans l'UE, l'EEE ou au Royaume-Uni, le RGPD de l'UE ou le RGPD du Royaume-Uni s'applique (article 3(2)) et vous pouvez porter plainte auprès de votre autorité de protection des données. Aucun représentant au titre de l'article 27 n'est encore désigné.
 Ce qui est recueilli : uniquement l'adresse courriel que vous saisissez.
 Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour une charte de la transparence numérique.
 Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, jusqu'à votre désabonnement.
@@ -43,7 +43,7 @@ Reçu d'avis : un reçu vous est émis à l'inscription.
 
 Avis 0PN, niveau 1 : 0PN Public Registered
 Le niveau 1, 0PN Public Registered, est l'échelon suivant après le niveau 0, 0PN Public. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.
-Responsable du traitement : TCIEG, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.
+Responsable du traitement : TCIEG, exploité par TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, Floride). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.
 Ce qui est recueilli : nom de l'organisation, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.
 Finalité : activer le signal de transparence et l'ajouter à votre badge.
 Validation : le statut juridique valide de l'organisation est vérifié auprès d'un registre public lorsque le service est en ligne.

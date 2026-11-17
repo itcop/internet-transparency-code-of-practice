@@ -108,8 +108,8 @@ const i18n = {
       notice: {
         title: "ITCoP Badge notice",
         intro: "Before you sign up, here is what this collection involves.",
-        controller: "Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.",
-        authority: "Authority: UK GDPR and the Data Protection Act 2018; the Information Commissioner's Office (GB). If you are in the EU or the EEA, the EU GDPR also applies.",
+        controller: "Controller: TCIEG, the Transparency and Consent Interoperability Expert Group, operated by TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, a Florida limited liability company, document number L26000502069). Its Controller Identification Record is at tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Authority: TCIEG US is established in the United States. If you are in the EU, the EEA or the UK, the EU GDPR or the UK GDPR applies (Article 3(2)) and you can complain to your data protection authority. An Article 27 representative is not yet appointed.",
         collected: "What is collected: only the email address you enter.",
         purpose: "Purpose: badge signup and support for the ITCoP 2028 campaign for a Digital Transparency Charter.",
         newsletter: "If you turn on campaign updates: your email is also used to send you TCIEG campaign updates, until you unsubscribe.",
@@ -162,7 +162,7 @@ const i18n = {
         notice: {
           title: "0PN Notice, Level 1: 0PN Public Registered",
           intro: "Level 1, 0PN Public Registered, is the next rung above Level 0, 0PN Public. It records a full inspectable controller entry for an organisation.",
-          controller: "Controller: TCIEG, operated by TCIEG UK (in incorporation in the United Kingdom, not yet registered). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.",
+          controller: "Controller: TCIEG, operated by TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, Florida). When listings open, your organisation record is passed to the 0PN Registry, operated by Open Consent Group Ltd, which is then the controller of your listing.",
           collected: "What is collected: organisation name, country, organisation website, privacy contact, and an online access point URL if you have one.",
           purpose: "Purpose: to activate the transparency signal and add it to your badge.",
           validation: "Validation: the organisation's valid legal status is checked against a public registry when the backend is live.",
@@ -308,8 +308,8 @@ const i18n = {
       notice: {
         title: "Avis du badge ITCoP",
         intro: "Avant votre inscription, voici en quoi consiste cette collecte.",
-        controller: "Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.",
-        authority: "Autorité : le RGPD du Royaume-Uni et la Data Protection Act 2018 ; l'Information Commissioner's Office (Royaume-Uni). Si vous êtes dans l'UE ou l'EEE, le RGPD de l'UE s'applique aussi.",
+        controller: "Responsable du traitement : TCIEG, le Transparency and Consent Interoperability Expert Group, exploité par TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, société à responsabilité limitée de Floride, numéro de document L26000502069). Sa fiche d'identification du responsable est à tcieg.org/.well-known/transparency/cir.json.",
+        authority: "Autorité : TCIEG US est établi aux États-Unis. Si vous êtes dans l'UE, l'EEE ou au Royaume-Uni, le RGPD de l'UE ou le RGPD du Royaume-Uni s'applique (article 3(2)) et vous pouvez porter plainte auprès de votre autorité de protection des données. Aucun représentant au titre de l'article 27 n'est encore désigné.",
         collected: "Ce qui est recueilli : uniquement l'adresse courriel que vous saisissez.",
         purpose: "Finalité : l'inscription au badge et le soutien à la campagne ITCoP 2028 pour une charte de la transparence numérique.",
         newsletter: "Si vous activez les nouvelles de la campagne : votre courriel sert aussi à vous envoyer les nouvelles de la campagne TCIEG, jusqu'à votre désabonnement.",
@@ -362,7 +362,7 @@ const i18n = {
         notice: {
           title: "Avis 0PN, niveau 1 : 0PN Public Registered",
           intro: "Le niveau 1, 0PN Public Registered, est l'échelon suivant après le niveau 0, 0PN Public. Il enregistre une fiche de responsable complète et vérifiable pour une organisation.",
-          controller: "Responsable du traitement : TCIEG, exploité par TCIEG UK (en cours de constitution au Royaume-Uni, pas encore immatriculée). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.",
+          controller: "Responsable du traitement : TCIEG, exploité par TCIEG US (Transparency and Consent Interoperability Expert Group, LLC, Floride). À l'ouverture des inscriptions, la fiche de votre organisation est transmise au registre 0PN, exploité par Open Consent Group Ltd, qui devient alors responsable de votre inscription.",
           collected: "Ce qui est recueilli : nom de l'organisation, pays, site Web de l'organisation, contact vie privée et une URL de point d'accès en ligne le cas échéant.",
           purpose: "Finalité : activer le signal de transparence et l'ajouter à votre badge.",
           validation: "Validation : le statut juridique valide de l'organisation est vérifié auprès d'un registre public lorsque le service est en ligne.",
